@@ -1,1 +1,112 @@
+.ui.label.items {
+  background: transparent !important;
+}
 
+#top_name {
+  font-size: 1.4em;
+  background-color: transparent;
+  margin-left: 0;
+}
+
+
+body > .login {
+  background-color: #E4E4E4;
+}
+body > .grid.login {
+  height: 100%;
+  margin: 0;
+}
+
+.image.login {
+  margin-top: -100px;
+}
+.column.login {
+  max-width: 450px;
+  margin: 500px;
+}
+
+.ui.mini.circular.image.konata {
+  height: 35px;
+}
+
+.header.item {
+  width: 100%;
+}
+
+.grey.first.menu {
+  margin-top: 4.2em;
+  background-color: #DCDCDC;
+  border-radius: 0px;
+}
+
+.grey.menu {
+  background-color: #DCDCDC;
+  border-radius: 0px;
+}
+
+.ui.label.ex {
+  border-style: none;
+  margin-left: 0 !important;
+  background-color: #DCDCDC !important;
+  font-size: 1.2em !important;
+  color: rgb(0,0,0) !important;
+}
+
+.ui.label.items {
+  color: rgb(0,0,0) !important;
+  font-size: 1.2em !important;
+  margin-left: 0 !important;
+}
+
+div > .header.icon {
+  display: inline-flex !important;
+}
+
+.ui.menu {
+  display: block;
+  border: none;
+}
+
+.ui.mini.image.stats {
+  padding: 2px;
+  margin-left: 2px;
+}
+
+div > .table.items {
+  background-color: white;
+}
+
+.numbers {
+  padding: 0.8em;
+}
+
+div > .months {
+  padding-right: 0 !important;
+  margin: 0 !important;
+  background-color: transparent !important;
+  font-size: 1.2em !important;
+  color: black !important;
+}
+
+a:hover {
+  background-color: #E4E4E4 !important;
+  transition: 1s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  -o-transition-delay: 0s;
+}
+
+a {
+  /*	background: #dbdbdb;*/
+  -webkit-transition: .2s all;
+  -webkit-transition-delay: .3s;
+  -moz-transition: .2s all;
+  -moz-transition-delay: .3s;
+  -ms-transition: .2s all;
+  -ms-transition-delay: .3s;
+  -o-transition: .2s all;
+  -o-transition-delay: .3s;
+  transition: .2s all;
+  transition-delay: .3s;
+}
