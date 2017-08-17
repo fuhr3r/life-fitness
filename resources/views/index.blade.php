@@ -1,9 +1,12 @@
 
 
 <head>
-    <meta charset="UTF-8">
     <title>Academia Life Fitness</title>
-    <meta name=”viewport” content=”width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;” />
+    <meta  charset="UTF-8" />
+    <meta name=”viewport” content=”width=device-width, user-scalable=0; initial-scale=1.0, maximum-scale=1.0" >
+    <meta name=”viewport” content=”width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;” >
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+
     <link rel="stylesheet" href="{{ URL::asset('semantic/semantic.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/app.css/app.css') }}" />
 </head>
@@ -50,7 +53,7 @@
                 </div>
                 <div class="right menu">
                     <div class="vertically fitted borderless item">
-                        <img class="ui mini image stats" src="images/icon/supino.png">
+                        <img class="ui mini image stats" src="{{ URL::asset('images/icons/ombro.svg') }}">
                         <img class="ui mini image stats" src="images/icon/reset.png">
                         <img class="ui mini image stats" src="images/icon/haltere.png">
                     </div>
@@ -121,7 +124,7 @@
         <div class="ui transparent grey main menu">
             <div class="container">
                 <div class="borderless item">
-                    <img class="ui mini image" src="images/icon/biceps.png">
+                    <img class="ui mini image stats" src="{{ URL::asset('images/icons/ombro.png') }}">
                     <div class="ui label ex">Tríceps</div>
                 </div>
                 <div class="right menu">
@@ -197,7 +200,7 @@
         <div class="ui transparent grey main menu">
             <div class="container">
                 <div class="borderless item">
-                    <img class="ui mini image" src="images/icon/biceps.png">
+                    <img class="ui mini image" src="{{ URL::asset('images/icons/ombro.png') }}">
                     <div class="ui label ex">Ombro</div>
                 </div>
                 <div class="right menu">

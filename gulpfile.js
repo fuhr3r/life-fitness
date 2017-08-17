@@ -6,13 +6,16 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-gulp.task('styles', function() {
+//Compile task
+gulp.task('compile', function() {
     gulp.src('resources/assets/sass/app.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('public/css/app.css'))
 });
 
 //Watch task
-gulp.task('default',function() {
-    gulp.watch('resources/assets/sass/app.scss',['styles']);
+gulp.task('watch',function() {
+    gulp.watch('resources/assets/sass/app.scss',['compile']);
 });
+
+gulp.task('default', ['compile', 'watch']);
