@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function address(){
         return $this->belongsTo('App\Address');
     }
+
+    public function User_Exercise(){
+        return $this->hasMany('App\User_Exercise');
+    }
 }
