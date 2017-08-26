@@ -8,11 +8,11 @@ class Exercise extends Model
 {
     protected $fillable = ['name'];
 
-    public function Part(){
+    public function part(){
     	return $this->belongsTo('App\Part');
     }
 
-    public function User_Exercise(){
+    public function user_exercise(){
     	return $this->hasMany('App\User_Exercise');
     }
 }

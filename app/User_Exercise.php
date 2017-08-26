@@ -10,11 +10,11 @@ class User_Exercise extends Model
         'serie', 'repetions', 'weight', 'day'
     ];
 
-    public function User(){
+    public function user(){
     	return $this->belongsTo('App\User');
     }
 
-    public function Exercise(){
+    public function exercise(){
     	return $this->belongsTo('App\Exercise');
     }
 }

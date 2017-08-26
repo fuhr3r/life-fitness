@@ -10,7 +10,7 @@ class Part extends Model
         'name'
     ];
 
-    public function Exercise(){
-    	return $this->hasMany('App\Exercise')
+    public function exercise(){
+    	return $this->hasMany('App\Exercise');
     }
 }

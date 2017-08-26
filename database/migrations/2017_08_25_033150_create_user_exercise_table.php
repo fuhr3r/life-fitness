@@ -16,9 +16,9 @@ class CreateUserExerciseTable extends Migration
         Schema::create('user_exercise', function (Blueprint $table){
             $table->increments('id');
             $table->integer('serie');
-            $table->integer('repetions');
+            $table->integer('repetitions');
             $table->float('weight');
-            $table->date('day');
+            $table->enum('day', ['seg, ter, qua, quin, sex, sab, dom']);
         });
     }
 
