@@ -14,7 +14,7 @@ class AddAddressRefToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('address_id')->unsigned();
+            $table->integer('address_id')->unsigned()->nullable();
             $table->foreign('address_id')->references('id')->on('addresses');
         });
     }

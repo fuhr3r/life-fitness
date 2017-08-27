@@ -15,7 +15,7 @@ class AddExerciseRefToUserExercise extends Migration
     {
         Schema::table('user_exercise', function(Blueprint $table){
             $table->integer('exercise_id')->unsigned();
-            $table->foreign('exercise_id')->references('id')->on('exercise');
+            $table->foreign('exercise_id')->references('id')->on('exercises');
         });
     }
 

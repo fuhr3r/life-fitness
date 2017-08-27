@@ -13,9 +13,9 @@ class AddPartRefToExerciseTable extends Migration
      */
     public function up()
     {
-        Schema::table('exercise', function(Blueprint $table){
+        Schema::table('exercises', function(Blueprint $table){
             $table->integer('part_id')->unsigned();
-            $table->foreign('part_id')->references('id')->on('part');
+            $table->foreign('part_id')->references('id')->on('parts');
         });
     }
 
