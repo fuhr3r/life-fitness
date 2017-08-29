@@ -16,7 +16,7 @@ class AddFieldsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('cpf', 15);
             $table->string('phone', 30);
-            $table->enum('type', ['aluno', 'treinador', 'administrador']);
+            $table->enum('type', ['aluno', 'treinador', 'admin']);
         });
     }
 

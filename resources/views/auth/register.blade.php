@@ -66,6 +66,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('type') ? ' has-error' : '' }}">
+                            <label for="phone" class="col-md-4 control-label">Tipo</label>
+
+                            <div class="col-md-6">
+                                {{ Form::select('type', array('aluno'=>'Aluno', 'treinador'=>'Treinador')) }}
+
+                                @if ($errors->has('type'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('type') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
