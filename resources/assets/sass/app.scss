@@ -1,17 +1,98 @@
 //TYPOGRAPHY
+$wrapper-height: 60px;
+$text-margin: 100px;
+$text-size: 18px;
 
 //GLOBAL SETTINGS
+.ui.padded.container {
+  display: flex;
+  margin-top: 5em;
 
-.ui.fixed.inverted.menu + section.ui.padded.grid{
-  //margin-top: 2em !important;
+
+  //individual flex adjustments for each container
+  .left {
+    flex-direction: column;
+
+    .wrapper{
+      height: $wrapper-height;
+    }
+  }
+  .right {
+    justify-content: center;
+
+    .wrapper{
+      height: $wrapper-height;
+    }
+  }
+
+  .container {
+    display: flex;
+    width: 50%;
+    //background: lightgrey;
+
+    .heading {
+      align-items: center;
+      display: flex;
+
+      img.ui.mini.image {
+        height: 6em;
+        width: auto;
+      }
+
+      h2 {
+        font-size: 30px;
+        margin: 0 0 0 0.3em;
+      }
+    }
+
+    //right container
+
+    .column {
+      align-items: center;
+      width: 33%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .icon.wrapper {
+      display: flex;
+
+      i {
+        margin: 0;
+        font-size: 2em;
+        align-self: center;
+        margin-top: 0.3em;
+      }
+    }
+
+  }
+
+  .list {
+    margin-top: $text-margin;
+    font-size: $text-size;
+  }
+
 }
 
+//.ui.padded.container{
+//  margin-top: 6em;
+//}
+//
+//.ui.header > .exercise.icon{
+//  font-size: 14px;
+//  margin: 0;
+//  margin-left: 14px;
+//  float: right;
+//}
+//
+//.right.floated.number.item{
+//  display: inline;
+//}
 
 //HEADER
 
 //IMAGES
-
-.ui.small.image>img.ui.mini.image{
-  height: 0.5em;
-  width: auto;
-}
+//.training.names.container > img.ui.mini.image{
+//  height: 0.5em;
+//  width: auto;
+//}

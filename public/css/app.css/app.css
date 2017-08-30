@@ -1,3 +1,38 @@
-.ui.small.image > img.ui.mini.image {
-  height: 0.5em;
-  width: auto; }
+.ui.padded.container {
+  display: flex;
+  margin-top: 5em; }
+  .ui.padded.container .left {
+    flex-direction: column; }
+    .ui.padded.container .left .wrapper {
+      height: 60px; }
+  .ui.padded.container .right {
+    justify-content: center; }
+    .ui.padded.container .right .wrapper {
+      height: 60px; }
+  .ui.padded.container .container {
+    display: flex;
+    width: 50%; }
+    .ui.padded.container .container .heading {
+      align-items: center;
+      display: flex; }
+      .ui.padded.container .container .heading img.ui.mini.image {
+        height: 6em;
+        width: auto; }
+      .ui.padded.container .container .heading h2 {
+        font-size: 30px;
+        margin: 0 0 0 0.3em; }
+    .ui.padded.container .container .column {
+      align-items: center;
+      width: 33%;
+      display: flex;
+      flex-direction: column; }
+    .ui.padded.container .container .icon.wrapper {
+      display: flex; }
+      .ui.padded.container .container .icon.wrapper i {
+        margin: 0;
+        font-size: 2em;
+        align-self: center;
+        margin-top: 0.3em; }
+  .ui.padded.container .list {
+    margin-top: 100px;
+    font-size: 18px; }
