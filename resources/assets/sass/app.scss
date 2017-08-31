@@ -44,6 +44,7 @@ $text-size: 16px;
   //individual flex adjustments for each container
   .left {
     flex-direction: column;
+    width: 60%;
 
     .wrapper{
       height: $wrapper-height;
@@ -51,6 +52,8 @@ $text-size: 16px;
   }
   .right {
     justify-content: center;
+    width: 40%;
+    background: lightgrey;
 
     .wrapper{
       height: $wrapper-height;
@@ -59,7 +62,7 @@ $text-size: 16px;
   //----------------------
   .container {
     display: flex;
-    width: 50%;
+    //width: 50%;
     //background: lightgrey;
 
     .heading {
@@ -67,12 +70,12 @@ $text-size: 16px;
       display: flex;
 
       img.ui.mini.image {
-        height: 6em;
+        height: 5em;
         width: auto;
       }
 
       h2 {
-        font-size: 30px;
+        font-size: 1.3em;
         margin: 0 0 0 0.3em;
       }
     }
@@ -122,25 +125,4 @@ $text-size: 16px;
 //IMAGES
 
 
-//.ui.padded.container{
-//  margin-top: 6em;
-//}
-//
-//.ui.header > .exercise.icon{
-//  font-size: 14px;
-//  margin: 0;
-//  margin-left: 14px;
-//  float: right;
-//}
-//
-//.right.floated.number.item{
-//  display: inline;
-//}
-
 //HEADER
-
-//IMAGES
-//.training.names.container > img.ui.mini.image{
-//  height: 0.5em;
-//  width: auto;
-//}

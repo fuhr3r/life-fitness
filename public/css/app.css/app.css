@@ -19,24 +19,26 @@
   position: relative;
   margin-top: 5em; }
   .ui.padded.container .left {
-    flex-direction: column; }
+    flex-direction: column;
+    width: 60%; }
     .ui.padded.container .left .wrapper {
       height: 60px; }
   .ui.padded.container .right {
-    justify-content: center; }
+    justify-content: center;
+    width: 40%;
+    background: lightgrey; }
     .ui.padded.container .right .wrapper {
       height: 60px; }
   .ui.padded.container .container {
-    display: flex;
-    width: 50%; }
+    display: flex; }
     .ui.padded.container .container .heading {
       align-items: center;
       display: flex; }
       .ui.padded.container .container .heading img.ui.mini.image {
-        height: 6em;
+        height: 5em;
         width: auto; }
       .ui.padded.container .container .heading h2 {
-        font-size: 30px;
+        font-size: 1.3em;
         margin: 0 0 0 0.3em; }
     .ui.padded.container .container .column {
       align-items: center;
