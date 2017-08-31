@@ -1,5 +1,5 @@
 $('#menuButton').click(function(event) {
-    $('.ui.labeled.icon.sidebar').sidebar('toggle');
+    $('.ui.sidebar').sidebar('toggle');
 });
 
 $('#home').click(function(event) {

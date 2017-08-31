@@ -9,22 +9,22 @@
     <link rel="stylesheet" href="{{ URL::asset('css/app.css/app.css') }}"/>
 </head>
 
-<div class="ui left demo thin vertical inverted sidebar labeled icon menu">
-    <a id="home" class="item">
-        <i class="checked calendar icon"></i>
-        Treino de Hoje
+<div class="ui inverted vertical menu wide sidebar">
+    <a class="item">
+        <i class="undo icon"></i>
+        <span>Treino de Hoje</span>
     </a>
-    <a id="digievolution" class="item">
+    <a class="item">
         <i class="line chart icon"></i>
-        Minha Evolução
+        <span>Minha Evolução</span>
     </a>
     <a class="item">
         <i class="setting icon"></i>
-        Configurações
+        <span>Configurações</span>
     </a>
-    <a id="quit" class="item">
-        <i class="power icon"></i>
-        Sair
+    <a class="item">
+        <i class="sign out icon"></i>
+        <span>Sair</span>
     </a>
 </div>
 
@@ -32,71 +32,58 @@
     {{--<img class="ui mini image" src="{{ URL::asset('images/icons/ombro.png') }}">--}}
     <div class="ui fixed inverted menu">
         <div class="ui container">
-            <a id="menuButton" href="#" class="item circular ui icon button">
+            <a id="menuButton" href="#" class="item ui icon button">
                 <i class="content icon"></i>
             </a>
-            <a href="#" class="header item disabled">
+            <div class="header item disabled">
                 {{--<img class="ui mini circular image konata" src="images/maxresdefault.jpg">--}}
-                <span id="top_name" class="ui label">Academia Life Fitness</span>
-            </a>
+                <span class="main title">Treinos de hoje</span>
+            </div>
         </div>
     </div>
 
     <section class="ui padded container">
-
 
         <div class="left container">
             <div class="heading wrapper">
                 <img class="ui mini image" src="{{ URL::asset('images/icons/ombro.png') }}">
                 <h2>Ombro</h2>
             </div>
-
             <div class="trainings list">
+                <span>Lorem Lorem Lorem</span>
                 <span>Lorem Lorem Lorem</span>
             </div>
         </div>
 
-
-
-
         <div class="right container">
-
             <div class="serie column">
                 <div class="icon wrapper">
                     <i class="undo icon"></i>
                 </div>
-
                 <div class="values list">
                     <span>99</span>
+                    <span>99</span>
                 </div>
-
             </div>
 
             <div class="serie column">
                 <div class="icon wrapper">
                     <i class="undo icon"></i>
                 </div>
-
                 <div class="values list">
                     <span>99</span>
                 </div>
-
             </div>
 
             <div class="serie column">
                 <div class="icon wrapper">
                     <i class="undo icon"></i>
                 </div>
-
                 <div class="values list">
                     <span>99</span>
                 </div>
-
             </div>
-
         </div>
-
-
     </section>
 
     <section class="ui padded container">
