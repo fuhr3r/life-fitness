@@ -1,17 +1,7 @@
-<head>
-    <title>Academia Life Fitness</title>
-    <meta charset="UTF-8"/>
-    <meta name=”viewport” content=”width=device-width, user-scalable=0; initial-scale=1.0, maximum-scale=1.0">
-    <meta name=”viewport” content=”width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;”>
-    <meta name="viewport" content="width=device-width, user-scalable=no"/>
-    <meta name="theme-color" content="#000000" />
+@extends('layouts.app')
 
-    {{--<link rel="icon" sizes="192x192" href="nice-highres.png"> //logo--}}
-    <link rel="stylesheet" href="{{ URL::asset('semantic/semantic.css') }}"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css/app.css') }}"/>
-</head>
-
-<div class="ui inverted vertical menu wide sidebar">
+@section('content')
+    <div class="ui inverted vertical menu wide sidebar">
     <a class="item">
         <i class="undo icon"></i>
         <span>Treino de Hoje</span>
@@ -29,8 +19,7 @@
         <span>Sair</span>
     </a>
 </div>
-
-<div class="pusher">
+    <div class="pusher">
     {{--<img class="ui mini image" src="{{ URL::asset('images/icons/ombro.png') }}">--}}
     <div class="ui fixed inverted menu">
         <div class="ui container">
@@ -44,7 +33,7 @@
         </div>
     </div>
 
-    <section class="ui padded container">
+    <section id="first" class="ui padded container">
 
         <div class="left container">
             <div class="heading wrapper">
@@ -146,17 +135,4 @@
     </section>
 
 </div>
-
-
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"
-        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-<script src="{{ URL::asset('semantic/semantic.js') }}"></script>
-
-<script src="{{ URL::asset('js/hammer.min.js') }}"></script>
-<script src="{{ URL::asset('js/hammer-time.min.js') }}"></script>
-<script src="{{ URL::asset('js/jquery.hammer.js') }}"></script>
-
-
-<script src="{{ URL::asset('js/app.js') }}"></script>
-
-{{--<script src="js/js.js"></script>--}}
+@endsection

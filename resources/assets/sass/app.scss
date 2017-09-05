@@ -32,7 +32,7 @@ $wrapper-height: 60px;
 $text-margin: 50px;
 $text-size: 16px;
 
-.ui.padded.container:first-of-type{
+#first{
   margin-top: 6em;
 }
 
@@ -53,7 +53,6 @@ $text-size: 16px;
   .right {
     justify-content: center;
     width: 40%;
-    background: lightgrey;
 
     .wrapper{
       height: $wrapper-height;
