@@ -8,13 +8,6 @@ resim.hammer().on("swiperight", function(ev) {
     $('.ui.sidebar').sidebar('toggle');
 });
 
-$('.tabular.menu .item').tab();
-
-$('.name').click(function () {
-    $('.ui.modal').modal('show');
-});
-
-$('.ui.dropdown').dropdown();
 
 // $(document).ready(function() {
 //     $('.ui.form').form({
