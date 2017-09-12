@@ -10,17 +10,18 @@
     {{--<link rel="icon" sizes="192x192" href="nice-highres.png"> //logo--}}
     <link rel="stylesheet" href="{{ URL::asset('semantic/semantic.css') }}"/>
     <link rel="stylesheet" href="{{ URL::asset('css/app.css/app.css') }}"/>
+    @stack('training-grid')
 </head>
 <body>
 
 @yield('content')
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="{{ URL::asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
 <script src="{{ URL::asset('semantic/semantic.js') }}"></script>
 
-<script src="{{ URL::asset('js/hammer.min.js') }}"></script>
-<script src="{{ URL::asset('js/hammer-time.min.js') }}"></script>
-<script src="{{ URL::asset('js/jquery.hammer.js') }}"></script>
+<script src="{{ URL::asset('js/hammer-js/hammer.min.js') }}"></script>
+<script src="{{ URL::asset('js/hammer-js/hammer-time.min.js') }}"></script>
+<script src="{{ URL::asset('js/hammer-js/jquery.hammer.js') }}"></script>
 
 <script src="{{ URL::asset('js/app.js') }}"></script>
 </body>
