@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@push('mask')
+    <script src="{{ URL::asset('js/vanilla-masker/vanilla-masker.min.js') }}"></script>
+    <script src="{{ URL::asset('js/vanilla-masker/masks.js') }}"></script>
+@endpush
+
+@push('cep')
+    <script src="{{ URL::asset('js/cep.js') }}"></script>
+@endpush
+
 @section('content')
 
     <div class="ui fixed inverted menu">
@@ -56,7 +65,7 @@
             </div>
             <div class="content">
                 <form class="ui form">
-                    <div class="four fields">
+                    <div class="fields">
                         <div class="field">
                             <label>Nome completo</label>
                             <input type="text" name="name" placeholder="Nome completo">
@@ -81,26 +90,70 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="three fields">
-                        <div class="field">
-                            <label>Profissão</label>
-                            <input type="text" name="profession" placeholder="Profissão">
-                        </div>
-
-                        <div class="field">
-                            <label>Endereço</label>
-                            <input type="text" name="name" placeholder="Nome completo">
-                        </div>
-                    </div>
-                    <div class="two fields">
                         <div class="four wide field">
                             <label>Data de Nascimento</label>
                             <input type="date" name="date" placeholder="dd/mm/aaaa">
                         </div>
-
                     </div>
+
+                    <div class="fields">
+                        <div class="three wide field">
+                            <label>CEP</label>
+                            <input type="text" name="cep" placeholder="Apenas números">
+                        </div>
+
+                        <div class="four wide field">
+                            <label>Rua</label>
+                            <input type="text" name="street" placeholder="Rua, alameda, avenida, ...">
+                        </div>
+
+                        <div class="three wide field">
+                            <label>Bairro</label>
+                            <input type="text" name="neighborhood" placeholder="Nome do bairro">
+                        </div>
+
+                        <div class="three wide field">
+                            <label>Cidade</label>
+                            <input type="text" name="city" placeholder="Nome da Cidade">
+                        </div>
+
+                        <div class="two wide field">
+                            <label>Estado</label>
+                            <input type="text" name="state" placeholder="Sigla">
+                        </div>
+                    </div>
+
+                    <div class="two fields">
+                        <div class="three wide field">
+                            <label>Telefone</label>
+                            <input type="text" name="telephone" placeholder="Telefone Fixo">
+                        </div>
+
+                        <div class="three wide field">
+                            <label>Celular</label>
+                            <input type="text" name="cellphone" placeholder="Número de celular">
+                        </div>
+                    </div>
+
+                    <div class="fields">
+                        <div class="four wide field">
+                            <label>Restrições</label>
+                            <input type="text" name="telephone" placeholder="Telefone Fixo">
+                        </div>
+
+                        <div class="four wide field">
+                            <label>Objetivos</label>
+                            <input type="text" name="cellphone" placeholder="Número de celular">
+                        </div>
+
+                        <div class="three wide field">
+                            <label>Período</label>
+                            <input type="text" name="cellphone" placeholder="Número de celular">
+                        </div>
+                    </div>
+
+
+
                     <div class="field">
                         <div class="ui checkbox">
                             <input type="checkbox" tabindex="0" class="hidden">

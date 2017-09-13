@@ -23,6 +23,9 @@
 <script src="{{ URL::asset('js/hammer-js/hammer-time.min.js') }}"></script>
 <script src="{{ URL::asset('js/hammer-js/jquery.hammer.js') }}"></script>
 
+@stack('mask')
+@stack('cep')
+
 <script src="{{ URL::asset('js/app.js') }}"></script>
 </body>
 </html>

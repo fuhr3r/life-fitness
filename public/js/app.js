@@ -8,7 +8,9 @@ resim.hammer().on("swiperight", function(ev) {
     $('.ui.sidebar').sidebar('toggle');
 });
 
-
+$('.name').click(function () {
+    $('.ui.modal').modal('show');
+});
 // $(document).ready(function() {
 //     $('.ui.form').form({
 //         fields: {
