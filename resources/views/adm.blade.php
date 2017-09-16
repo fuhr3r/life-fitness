@@ -99,12 +99,17 @@
                     <div class="fields">
                         <div class="three wide field">
                             <label>CEP</label>
-                            <input type="text" name="cep" placeholder="Apenas números">
+                            <input type="text" name="cep" placeholder="Apenas números" maxlength="9">
                         </div>
 
                         <div class="four wide field">
                             <label>Rua</label>
                             <input type="text" name="street" placeholder="Rua, alameda, avenida, ...">
+                        </div>
+
+                        <div class="two wide field">
+                            <label>Número</label>
+                            <input type="text" name="number" placeholder="Número">
                         </div>
 
                         <div class="three wide field">
