@@ -13,3 +13,9 @@
 
 #first {
   margin-top: 6em; }
+
+.ui.form input[type=text]:disabled {
+  background: #e8e8e8; }
+
+.action {
+  cursor: pointer; }

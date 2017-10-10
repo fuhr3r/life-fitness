@@ -10,7 +10,7 @@
     {{--<link rel="icon" sizes="192x192" href="nice-highres.png"> //logo--}}
     <link rel="stylesheet" href="{{ URL::asset('semantic/semantic.css') }}"/>
     <link rel="stylesheet" href="{{ URL::asset('css/app.css/app.css') }}"/>
-    @stack('training-grid')
+    <link rel="stylesheet" href="{{ URL::asset('css/training-grid.css/training-grid.css') }}"/>
 </head>
 <body>
 
@@ -22,9 +22,6 @@
 <script src="{{ URL::asset('js/hammer-js/hammer.min.js') }}"></script>
 <script src="{{ URL::asset('js/hammer-js/hammer-time.min.js') }}"></script>
 <script src="{{ URL::asset('js/hammer-js/jquery.hammer.js') }}"></script>
-
-@stack('mask')
-@stack('cep')
 
 <script src="{{ URL::asset('js/app.js') }}"></script>
 </body>

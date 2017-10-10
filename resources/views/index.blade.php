@@ -1,8 +1,4 @@
-@extends('layouts.app')
-
-@push('training-grid')
-    <link rel="stylesheet" href="{{ URL::asset('css/training-grid.css/training-grid.css') }}"/>
-@endpush
+@extends('layouts.student-app')
 
 @section('content')
     <div class="ui inverted vertical menu wide sidebar">

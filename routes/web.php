@@ -19,6 +19,10 @@ Route::get('/adm', function () {
     return view('adm');
 });
 
+Route::get('/aluno', function () {
+    return view('aluno');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

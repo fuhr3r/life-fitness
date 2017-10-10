@@ -31,3 +31,15 @@
 #first{
   margin-top: 6em;
 }
+
+//FORMS
+
+.ui.form input[type=text]:disabled{
+  background: #e8e8e8;
+}
+
+//BUTTONS AND LINKS
+
+.action{
+  cursor: pointer;
+}
