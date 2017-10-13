@@ -20,24 +20,33 @@
                             Peitoral
                         </div>
                         <div class="content">
-                            <p class="transition visible">Supíno Reto</p>
-                            <p style="float: right">1</p>
+                            <span class="transition visible">Supíno Reto</span>
+                            <span style="float: right">1</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="ui bottom attached tab segment" data-tab="second">
-            <table class="ui stripped table">
-                <tbody>
-                <tr>
-                    <td><a href="#" class="trainer name">ipsum</a></td>
-                </tr>
-                <tr>
-                    <td><a href="#">ipsum</a></td>
-                </tr>
-                </tbody>
-            </table>
+            <div>INFORMAÇÕES FIXAS</div>
+            <div class="wrapper">
+                <div class="timeline container">
+                    <div class="ui styled accordion">
+                        <div class="active title">
+                            <i class="dropdown icon"></i>
+                            <span>2017</span>
+                        </div>
+                        <div class="content">
+                            <p><a href="">Janeiro</a></p>
+                            <p><a href="">Fevereiro</a></p>
+                            <p><a href="">Março</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="info container">
+                   form de evolução
+                </div>
+            </div>
         </div>
     </div>
 

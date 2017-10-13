@@ -31,6 +31,15 @@
 #first{
   margin-top: 6em;
 }
+  //Grid for showing timeline and evolution information
+
+.wrapper{
+  display: flex;
+
+  .timeline.container{
+    width: 30%;
+  }
+}
 
 //FORMS
 
@@ -38,8 +47,18 @@
   background: #e8e8e8;
 }
 
+.
+
 //BUTTONS AND LINKS
 
 .action{
   cursor: pointer;
+}
+
+.content p{
+  margin-left: 1em;
+
+  a{
+    color: black;
+  }
 }

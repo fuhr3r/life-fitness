@@ -3,7 +3,7 @@
 @section('content')
     <div class="ui inverted vertical menu wide sidebar">
     <a class="item">
-        <i class="undo icon"></i>
+        <img class="ui mini image" src="{{ URL::asset('images/icons/sidebar/list.svg') }}">
         <span>Treino de Hoje</span>
     </a>
     <a class="item">
@@ -49,7 +49,7 @@
         <div class="right container">
             <div class="serie column">
                 <div class="icon wrapper">
-                    <i class="undo icon"></i>
+                    <img class="ui mini image" src="{{ URL::asset('images/student-list/vertical-halter.svg') }}">
                 </div>
                 <div class="values list">
                     <span>99</span>
@@ -59,7 +59,7 @@
 
             <div class="serie column">
                 <div class="icon wrapper">
-                    <i class="undo icon"></i>
+                    <img class="ui mini image" src="{{ URL::asset('images/student-list/weight.svg') }}">
                 </div>
                 <div class="values list">
                     <span>99</span>

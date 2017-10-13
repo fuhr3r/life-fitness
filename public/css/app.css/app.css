@@ -14,8 +14,18 @@
 #first {
   margin-top: 6em; }
 
+.wrapper {
+  display: flex; }
+  .wrapper .timeline.container {
+    width: 30%; }
+
 .ui.form input[type=text]:disabled {
   background: #e8e8e8; }
 
 .action {
   cursor: pointer; }
+
+.content p {
+  margin-left: 1em; }
+  .content p a {
+    color: black; }
