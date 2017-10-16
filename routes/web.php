@@ -26,3 +26,5 @@ Route::get('/aluno', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('part', 'PartController');
