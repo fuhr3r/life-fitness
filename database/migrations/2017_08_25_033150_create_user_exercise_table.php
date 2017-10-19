@@ -18,7 +18,7 @@ class CreateUserExerciseTable extends Migration
             $table->integer('serie');
             $table->integer('repetitions');
             $table->float('weight');
-            $table->enum('day', ['seg, ter, qua, quin, sex, sab, dom']);
+            $table->enum('day', ['seg', 'ter', 'qua', 'quin', 'sex', 'sab', 'dom']);
         });
     }
 

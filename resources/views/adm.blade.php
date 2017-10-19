@@ -10,12 +10,13 @@
         <div class="ui bottom attached tab segment active" data-tab="first">
             <table class="ui stripped table">
                 <tbody>
+                @forelse($users as $user)
                 <tr>
-                    <td><a href="#" class="student name">Lorem</a></td>
+                    <td><a href="/aluno/{{$user->id}}" class="student name">{{$user->name}}</a></td>
                 </tr>
-                <tr>
-                    <td>Lorem</td>
-                </tr>
+                @empty
+                    Vazio
+                @endforelse
                 </tbody>
             </table>
         </div>

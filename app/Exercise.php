@@ -14,7 +14,8 @@ class Exercise extends Model
     	return $this->belongsTo('App\Part');
     }
 
-    public function user_exercise(){
-    	return $this->hasMany('App\User_Exercise');
+    public function users(){
+    	return $this->belongsToMany('App\User', 'user_exercise')
+            ->withPivot('serie', 'repetitions', 'weight', 'day');
     }
 }

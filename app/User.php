@@ -31,7 +31,8 @@ class User extends Authenticatable
         return $this->belongsTo('App\Address');
     }
 
-    public function User_Exercise(){
-        return $this->hasMany('App\User_Exercise');
+    public function exercises(){
+        return $this->belongsToMany('App\Exercise', 'user_exercise')
+            ->withPivot('serie', 'repetitions', 'weight', 'day');
     }
 }
