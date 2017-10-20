@@ -66,6 +66,7 @@
                 </div>
             </div>
 
+
             <div class="serie column">
                 <div class="icon wrapper">
                     <i class="undo icon"></i>
