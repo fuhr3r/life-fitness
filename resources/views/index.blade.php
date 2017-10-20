@@ -49,7 +49,7 @@
         <div class="right container">
             <div class="serie column">
                 <div class="icon wrapper">
-                    <img class="ui mini image" src="{{ URL::asset('images/student-list/vertical-halter.svg') }}">
+                    <img class="ui mini image" src="{{ URL::asset('images/student-list/halter.svg') }}">
                 </div>
                 <div class="values list">
                     <span>99</span>
