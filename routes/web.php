@@ -15,14 +15,20 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/adm', function () {
-    return view('adm');
-});
+Route::get('/admin', 'UserExerciseController@listUsers');
 
-Route::get('/aluno', function () {
-    return view('aluno');
-});
+Route::get('/aluno/{id}', 'UserExerciseController@listExercises');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('part', 'PartController');
+
+Route::resource('exercise', 'ExerciseController');
+
+//Route::get('/user', 'UserExerciseController@showUsers');
+Route::get('/user/{id}/exercise', 'UserExerciseController@index');
+Route::get('/user/{id}/exercise/create', 'UserExerciseController@create');
+Route::post('/user/{id}/exercise/create', 'UserExerciseController@store')->name('user.exercises');
+Route::get('/user/{id}/exercise/create', 'UserExerciseController@store')->name('user.exercises');
