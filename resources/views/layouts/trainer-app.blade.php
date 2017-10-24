@@ -42,104 +42,112 @@
         Adicionar Aluno
     </div>
     <div class="content">
-        <form class="ui form">
-            <div class="fields">
-                <div class="five wide field">
-                    <label>Nome completo</label>
-                    <input type="text" name="name" placeholder="Nome completo">
-                </div>
-                <div class="three wide field">
-                    <label>CPF</label>
-                    <input type="text" name="cpf" placeholder="Apenas números">
-                </div>
-                <div class="four wide field">
-                    <label>E-mail</label>
-                    <input type="email" name="email" placeholder="exemplo@gmail.com">
-                </div>
-                <div class="two wide field">
-                    <label>Sexo</label>
-                    <div class="ui compact selection dropdown">
-                        <input type="hidden" name="gender">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Sexo</div>
-                        <div class="menu">
-                            <div class="item" data-value="1">Masculino</div>
-                            <div class="item" data-value="0">Feminino</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="four wide field">
-                    <label>Data de Nascimento</label>
-                    <input type="date" name="date" placeholder="dd/mm/aaaa">
-                </div>
-                <div class="three wide field">
-                    <label>Profissão</label>
-                    <input type="text" name="job" placeholder="Profissão">
-                </div>
-            </div>
+        {{--<form class="ui form">--}}
+            {{--<div class="fields">--}}
+                {{--<div class="five wide field">--}}
+                    {{--<label>Nome completo</label>--}}
+                    {{--<input type="text" name="name" placeholder="Nome completo">--}}
+                {{--</div>--}}
+                {{--<div class="three wide field">--}}
+                    {{--<label>CPF</label>--}}
+                    {{--<input type="text" name="cpf" placeholder="Apenas números">--}}
+                {{--</div>--}}
+                {{--<div class="four wide field">--}}
+                    {{--<label>E-mail</label>--}}
+                    {{--<input type="email" name="email" placeholder="exemplo@gmail.com">--}}
+                {{--</div>--}}
+                {{--<div class="two wide field">--}}
+                    {{--<label>Sexo</label>--}}
+                    {{--<div class="ui compact selection dropdown">--}}
+                        {{--<input type="hidden" name="gender">--}}
+                        {{--<i class="dropdown icon"></i>--}}
+                        {{--<div class="default text">Sexo</div>--}}
+                        {{--<div class="menu">--}}
+                            {{--<div class="item" data-value="1">Masculino</div>--}}
+                            {{--<div class="item" data-value="0">Feminino</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+                {{--<div class="four wide field">--}}
+                    {{--<label>Data de Nascimento</label>--}}
+                    {{--<input type="date" name="date" placeholder="dd/mm/aaaa">--}}
+                {{--</div>--}}
+                {{--<div class="three wide field">--}}
+                    {{--<label>Profissão</label>--}}
+                    {{--<input type="text" name="job" placeholder="Profissão">--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="fields">
-                <div class="three wide field">
-                    <label>CEP</label>
-                    <input type="text" name="cep" placeholder="Apenas números" maxlength="9">
-                </div>
+            {{--<div class="fields">--}}
+                {{--<div class="three wide field">--}}
+                    {{--<label>CEP</label>--}}
+                    {{--<input type="text" name="cep" placeholder="Apenas números" maxlength="9">--}}
+                {{--</div>--}}
 
-                <div class="four wide field">
-                    <label>Rua</label>
-                    <input type="text" name="street" placeholder="Rua, alameda, avenida, ...">
-                </div>
+                {{--<div class="four wide field">--}}
+                    {{--<label>Rua</label>--}}
+                    {{--<input type="text" name="street" placeholder="Rua, alameda, avenida, ...">--}}
+                {{--</div>--}}
 
-                <div class="two wide field">
-                    <label>Número</label>
-                    <input type="text" name="number" placeholder="Número">
-                </div>
+                {{--<div class="two wide field">--}}
+                    {{--<label>Número</label>--}}
+                    {{--<input type="text" name="number" placeholder="Número">--}}
+                {{--</div>--}}
 
-                <div class="three wide field">
-                    <label>Bairro</label>
-                    <input type="text" name="neighborhood" placeholder="Nome do bairro">
-                </div>
+                {{--<div class="three wide field">--}}
+                    {{--<label>Bairro</label>--}}
+                    {{--<input type="text" name="neighborhood" placeholder="Nome do bairro">--}}
+                {{--</div>--}}
 
-                <div class="three wide field">
-                    <label>Cidade</label>
-                    <input type="text" name="city" placeholder="Nome da Cidade">
-                </div>
+                {{--<div class="three wide field">--}}
+                    {{--<label>Cidade</label>--}}
+                    {{--<input type="text" name="city" placeholder="Nome da Cidade">--}}
+                {{--</div>--}}
 
-                <div class="two wide field">
-                    <label>Estado</label>
-                    <input type="text" name="state" placeholder="Sigla">
-                </div>
-            </div>
+                {{--<div class="two wide field">--}}
+                    {{--<label>Estado</label>--}}
+                    {{--<input type="text" name="state" placeholder="Sigla">--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="two fields">
-                <div class="three wide field">
-                    <label>Telefone</label>
-                    <input type="text" name="telephone" placeholder="DDD e número">
-                </div>
+            {{--<div class="two fields">--}}
+                {{--<div class="three wide field">--}}
+                    {{--<label>Telefone</label>--}}
+                    {{--<input type="text" name="telephone" placeholder="DDD e número">--}}
+                {{--</div>--}}
 
-                <div class="three wide field">
-                    <label>Celular</label>
-                    <input type="text" name="cellphone" placeholder="DDD e número">
-                </div>
-            </div>
+                {{--<div class="three wide field">--}}
+                    {{--<label>Celular</label>--}}
+                    {{--<input type="text" name="cellphone" placeholder="DDD e número">--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <div class="fields">
-                <div class="four wide field">
-                    <label>Restrições</label>
-                    <input type="text" name="telephone" placeholder="Telefone Fixo">
-                </div>
+            {{--<div class="fields">--}}
+                {{--<div class="four wide field">--}}
+                    {{--<label>Restrições</label>--}}
+                    {{--<input type="text" name="telephone" placeholder="Telefone Fixo">--}}
+                {{--</div>--}}
 
-                <div class="four wide field">
-                    <label>Objetivos</label>
-                    <input type="text" name="cellphone" placeholder="Número de celular">
-                </div>
+                {{--<div class="four wide field">--}}
+                    {{--<label>Objetivos</label>--}}
+                    {{--<input type="text" name="cellphone" placeholder="Número de celular">--}}
+                {{--</div>--}}
 
-                <div class="three wide field">
-                    <label>Período</label>
-                    <input type="text" name="cellphone" placeholder="Número de celular">
-                </div>
-            </div>
+                {{--<div class="three wide field">--}}
+                    {{--<label>Período</label>--}}
+                    {{--<input type="text" name="cellphone" placeholder="Número de celular">--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
-            <button class="ui button" type="submit">Submit</button>
+            {{--<button class="ui button" type="submit">Submit</button>--}}
+        {{--</form>--}}
+        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+            {{ csrf_field() }}
+
+            {!! Form::label('name', 'Nome')!!}
+            {!! Form::text('name')!!}
+
+            {!! Form::text('street')!!}
         </form>
     </div>
     <div class="actions">
