@@ -19,4 +19,8 @@ class User_Exercise extends Model
     public function exercise(){
     	return $this->belongsTo('App\Exercise');
     }
+
+    public function day(){
+        return $this->belongsTo('App\Day');
+    }
 }

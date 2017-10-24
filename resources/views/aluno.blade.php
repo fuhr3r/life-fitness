@@ -56,7 +56,11 @@
 
         {!! Form::model($user_exercise, ['action' => ['UserExerciseController@store', $user->id]] ) !!}
 
-        {!! Form::select('exercise', $exercises) !!}
+        parte
+        {!! Form::select('parts', $parts, null, ['id' => 'parts_select']) !!}
+
+        exercicio
+        {!! Form::select('exercise', [], null, ['id' => 'exercises_select']) !!}
 
         serie
         {!! Form::number('serie') !!}
@@ -68,8 +72,7 @@
         {!! Form::number('weight') !!}
 
         dia
-        {!! Form::select('day',
-         ['seg'=>'segunda', 'ter'=>'terça', 'qua'=>'quarta', 'quin'=>'quinta', 'sex'=>'sexta', 'sab'=>'sábado', 'dom'=>'domingo']) !!}
+        {!! Form::select('day_id', $days) !!}
 
         {!! Form::submit('Cadastrar') !!}
 
@@ -83,11 +86,16 @@
             série: {{$e->serie}}<br>
             repetições: {{$e->repetitions}}<br>
             peso: {{$e->weight}}<br>
-            dia: {{$e->day}}<br>
+        @if ($e->day)
+            dia: {{$e->day->name}}<br>
+        @endif
             <hr>
         @empty
             Vazio
         @endforelse
     </div>
+
+
+
 
 @endsection
