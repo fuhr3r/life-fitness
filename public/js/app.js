@@ -18,4 +18,12 @@ $('.new.trainer.action').click(function () {
     $('.ui.trainer.modal').modal('show');
 });
 
+$('.new.part.action').click(function () {
+    $('.ui.part.modal').modal('show');
+});
+
+$('.new.exercise.action').click(function () {
+    $('.ui.exercise.modal').modal('show');
+});
+
 $('.ui.accordion').accordion();

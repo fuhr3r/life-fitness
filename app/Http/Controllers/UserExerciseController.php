@@ -36,7 +36,8 @@ class UserExerciseController extends Controller
 
     public function listUsers(){
         $users = User::all();
-        return view('adm', ['users' => $users]);
+        $parts = Part::pluck('name', 'id');
+        return view('adm', ['users' => $users, 'parts' => $parts]);
     }
 
     public function listExercises($id){
