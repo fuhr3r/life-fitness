@@ -1,25 +1,30 @@
+body {
+  height: initial !important;
+}
+
 //SIDEBAR
 
-.ui.sidebar.inverted.vertical.menu{
-  .item{
+.ui.sidebar.inverted.vertical.menu {
+  .item {
     font-size: 2em;
     display: flex;
     align-items: center;
 
-    .icon{
+    .icon {
       margin: 0;
     }
 
-    span{
+    span {
       margin-left: 1em;
     }
   }
 }
+
 //PAGE HEADER
 
-.ui.fixed.inverted.menu .ui.container{
+.ui.fixed.inverted.menu .ui.container {
 
-  .content.icon,.main.title{
+  .content.icon, .main.title {
     font-size: 2.2em;
     color: white;
   }
@@ -28,37 +33,45 @@
 
 //CONTENT
 
-#first{
+#first {
   margin-top: 6em;
 }
-  //Grid for showing timeline and evolution information
 
-.wrapper{
+//Grid for showing timeline and evolution information
+
+.wrapper {
   display: flex;
 
-  .timeline.container{
+  .timeline.container {
     width: 30%;
   }
 }
 
 //FORMS
 
-.ui.form input[type=text]:disabled{
+.ui.form input[type=text]:disabled {
   background: #e8e8e8;
 }
 
-.
-
 //BUTTONS AND LINKS
 
-.action{
+.action {
   cursor: pointer;
 }
 
-.content p{
+.content p {
   margin-left: 1em;
 
-  a{
+  a {
     color: black;
   }
+}
+
+//BOTTOM MENU
+
+.ui.fixed.inverted.bottom.menu {
+  top: initial;
+  left: 0;
+  right: initial;
+  bottom: 0;
 }

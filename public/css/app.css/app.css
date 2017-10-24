@@ -1,3 +1,6 @@
+body {
+  height: initial !important; }
+
 .ui.sidebar.inverted.vertical.menu .item {
   font-size: 2em;
   display: flex;
@@ -29,3 +32,9 @@
   margin-left: 1em; }
   .content p a {
     color: black; }
+
+.ui.fixed.inverted.bottom.menu {
+  top: initial;
+  left: 0;
+  right: initial;
+  bottom: 0; }
