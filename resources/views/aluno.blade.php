@@ -50,11 +50,25 @@
         </div>
     </div>
 
+    ---------------TESTE---------------
+    <br>
+    @forelse($user_exercises as $day => $exercises)
+        <b>{{$day}}</b><br>
+        @foreach($exercises as $exercise)
+            parte: {{$exercise->exercise->part->name}}<br>
+            exercicio: {{$exercise->exercise->name}}<br>
+            <hr>
+        @endforeach
+    @empty
+        vazio
+    @endforelse
+    ---------------TESTE---------------
+    <br>
 
     <div>
 
 
-        {!! Form::model($user_exercise, ['action' => ['UserExerciseController@store', $user->id]] ) !!}
+        {!! Form::open(['action' => ['UserExerciseController@store', $user->id]] ) !!}
 
         parte
         {!! Form::select('parts', $parts, null, ['id' => 'parts_select']) !!}
@@ -80,20 +94,7 @@
 
     </div>
 
-    <div>
-        @forelse($user_exercise as $e)
-            exercicio: {{$e->exercise->name}}<br>
-            série: {{$e->serie}}<br>
-            repetições: {{$e->repetitions}}<br>
-            peso: {{$e->weight}}<br>
-        @if ($e->day)
-            dia: {{$e->day->name}}<br>
-        @endif
-            <hr>
-        @empty
-            Vazio
-        @endforelse
-    </div>
+
 
 
 

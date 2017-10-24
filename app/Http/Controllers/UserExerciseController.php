@@ -41,12 +41,21 @@ class UserExerciseController extends Controller
 
     public function listExercises($id){
         $user = User::find($id);
-        $user_exercise = User_Exercise::where('user_id', $user->id)->with('exercise')->get();
+        //$user_exercise = User_Exercise::where('user_id', $user->id)->with('exercise')->get();
         $parts = Part::pluck('name', 'id');
         $days = Day::pluck('name', 'id');
+
+        $user_exercises = [];
+
+        foreach($days as $day_id => $day){
+            $user_exercises[$day] = User_Exercise::where('user_id', $user->id)
+                       ->where('day_id', $day_id)
+                       ->get();
+        }
+
         //$exercises = Exercise::pluck('name', 'id');
         return view('aluno',
-            ['user' => $user, 'user_exercise' => $user_exercise, 'parts' => $parts, 'days' => $days]);
+            ['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
     }
 
     public function listExercisesByPart($id){
