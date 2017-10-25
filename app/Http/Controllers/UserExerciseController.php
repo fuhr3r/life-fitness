@@ -42,39 +42,27 @@ class UserExerciseController extends Controller
 
     public function listExercises($id){
         $user = User::find($id);
-        //$user_exercise = User_Exercise::where('user_id', $user->id)->with('exercise')->get();
-        $parts = Part::pluck('name', 'id');
         $days = Day::pluck('name', 'id');
+        $parts = Part::pluck('name', 'id');
 
         $user_exercises = [];
-
-        foreach($days as $day_id => $day){
-            $user_exercises[$day] = User_Exercise::where('user_id', $user->id)
-                       ->where('day_id', $day_id)
-                       ->get();
-        }
-
-        $parts = Part::pluck('name', 'id');
-        $partes = [];
+        $exercise_parts = [];
 
         foreach ($days as $day_id => $day){
             foreach ($parts as $part_id => $part){
-                $x = User_Exercise::with('exercise')->whereHas('exercise', function ($query) use ($part_id){
+                $exercise = User_Exercise::with('exercise')->whereHas('exercise', function ($query) use ($part_id){
                     $query->where('part_id', '=', $part_id);
                 })->where('day_id', '=', $day_id)->where('user_id', '=', $user->id)
                   ->get();
 
-                if ($x->first())
-                    $partes[$part] = $x;
-
+                if ($exercise->first())
+                    $exercise_parts[$part] = $exercise;
             }
-            $user_exercises[$day] = $partes;
 
-            $partes = [];
+            $user_exercises[$day] = $exercise_parts;
+            $exercise_parts = [];
         }
 
-
-        //$exercises = Exercise::pluck('name', 'id');
         return view('aluno',
             ['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
     }
