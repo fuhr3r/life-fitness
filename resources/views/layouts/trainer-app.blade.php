@@ -42,105 +42,7 @@
             Adicionar Aluno
         </div>
         <div class="content">
-            {{--<form class="ui form">--}}
-                {{--<div class="fields">--}}
-                    {{--<div class="five wide field">--}}
-                        {{--<label>Nome completo</label>--}}
-                        {{--<input type="text" name="name" placeholder="Nome completo">--}}
-                    {{--</div>--}}
-                    {{--<div class="three wide field">--}}
-                        {{--<label>CPF</label>--}}
-                        {{--<input type="text" name="cpf" placeholder="Apenas números">--}}
-                    {{--</div>--}}
-                    {{--<div class="four wide field">--}}
-                        {{--<label>E-mail</label>--}}
-                        {{--<input type="email" name="email" placeholder="exemplo@gmail.com">--}}
-                    {{--</div>--}}
-                    {{--<div class="two wide field">--}}
-                        {{--<label>Sexo</label>--}}
-                        {{--<div class="ui compact selection dropdown">--}}
-                            {{--<input type="hidden" name="gender">--}}
-                            {{--<i class="dropdown icon"></i>--}}
-                            {{--<div class="default text">Sexo</div>--}}
-                            {{--<div class="menu">--}}
-                                {{--<div class="item" data-value="1">Masculino</div>--}}
-                                {{--<div class="item" data-value="0">Feminino</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<div class="four wide field">--}}
-                        {{--<label>Data de Nascimento</label>--}}
-                        {{--<input type="date" name="date" placeholder="dd/mm/aaaa">--}}
-                    {{--</div>--}}
-                    {{--<div class="three wide field">--}}
-                        {{--<label>Profissão</label>--}}
-                        {{--<input type="text" name="job" placeholder="Profissão">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
 
-                {{--<div class="fields">--}}
-                    {{--<div class="three wide field">--}}
-                        {{--<label>CEP</label>--}}
-                        {{--<input type="text" name="cep" placeholder="Apenas números" maxlength="9">--}}
-                    {{--</div>--}}
-
-                    {{--<div class="four wide field">--}}
-                        {{--<label>Rua</label>--}}
-                        {{--<input type="text" name="street" placeholder="Rua, alameda, avenida, ...">--}}
-                    {{--</div>--}}
-
-                    {{--<div class="two wide field">--}}
-                        {{--<label>Número</label>--}}
-                        {{--<input type="text" name="number" placeholder="Número">--}}
-                    {{--</div>--}}
-
-                    {{--<div class="three wide field">--}}
-                        {{--<label>Bairro</label>--}}
-                        {{--<input type="text" name="neighborhood" placeholder="Nome do bairro">--}}
-                    {{--</div>--}}
-
-                    {{--<div class="three wide field">--}}
-                        {{--<label>Cidade</label>--}}
-                        {{--<input type="text" name="city" placeholder="Nome da Cidade">--}}
-                    {{--</div>--}}
-
-                    {{--<div class="two wide field">--}}
-                        {{--<label>Estado</label>--}}
-                        {{--<input type="text" name="state" placeholder="Sigla">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                {{--<div class="two fields">--}}
-                    {{--<div class="three wide field">--}}
-                        {{--<label>Telefone</label>--}}
-                        {{--<input type="text" name="telephone" placeholder="DDD e número">--}}
-                    {{--</div>--}}
-
-                    {{--<div class="three wide field">--}}
-                        {{--<label>Celular</label>--}}
-                        {{--<input type="text" name="cellphone" placeholder="DDD e número">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                {{--<div class="fields">--}}
-                    {{--<div class="four wide field">--}}
-                        {{--<label>Restrições</label>--}}
-                        {{--<input type="text" name="telephone" placeholder="Telefone Fixo">--}}
-                    {{--</div>--}}
-
-                    {{--<div class="four wide field">--}}
-                        {{--<label>Objetivos</label>--}}
-                        {{--<input type="text" name="cellphone" placeholder="Número de celular">--}}
-                    {{--</div>--}}
-
-                    {{--<div class="three wide field">--}}
-                        {{--<label>Período</label>--}}
-                        {{--<input type="text" name="cellphone" placeholder="Número de celular">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-                {{--<button class="ui button" type="submit">Submit</button>--}}
-            {{--</form>--}}
             <form class="ui form" method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
                 <div class="fields">
@@ -172,7 +74,7 @@
                         {!! Form::label('date', 'Data de Nascimento') !!}
                         {!! Form::text('date') !!}
                     </div>
-                    
+
                     <div class="three wide field">
                         {!! Form::label('job', 'Profissão') !!}
                         {!! Form::text('job') !!}
@@ -186,7 +88,7 @@
                         <label for="cep">CEP</label>
                         <input type="text" name="cep">
                     </div>
-                        
+
                     <div class="four wide field">
                         {!! Form::label('street', 'Endereço') !!}
                         {!! Form::text('street') !!}
@@ -228,6 +130,7 @@
 
                 </div>
 
+              {!! Form::submit() !!}
             </form>
         </div>
         <div class="actions">
@@ -244,16 +147,16 @@
             <form class="ui form">
                 <div class="fields">
                     <div class="five wide field">
-                        <label>Nome completo</label>
-                        <input type="text" name="name" placeholder="Nome completo">
+                        {!! Form::label('name', 'Nome') !!}
+                        {!! Form::text('name') !!}
                     </div>
                     <div class="three wide field">
-                        <label>CPF</label>
-                        <input type="text" name="cpf" placeholder="Apenas números">
+                        {!! Form::label('cpf', 'CPF') !!}
+                        {!! Form::text('cpf') !!}
                     </div>
                     <div class="four wide field">
-                        <label>E-mail</label>
-                        <input type="email" name="email" placeholder="exemplo@gmail.com">
+                        {!! Form::label('email', 'Email') !!}
+                        {!! Form::text('email') !!}
                     </div>
                     <div class="two wide field">
                         <label>Sexo</label>
@@ -268,12 +171,12 @@
                         </div>
                     </div>
                     <div class="four wide field">
-                        <label>Data de Nascimento</label>
-                        <input type="date" name="date" placeholder="dd/mm/aaaa">
+                        {!! Form::label('date', 'Data de Nascimento') !!}
+                        {!! Form::text('date') !!}
                     </div>
                     <div class="three wide field">
-                        <label>RG</label>
-                        <input type="text" name="rg" placeholder="Apenas números">
+                      {!! Form::label('rg', 'RG') !!}
+                      {!! Form::text('rg') !!}
                     </div>
                 </div>
 
@@ -284,44 +187,44 @@
                     </div>
 
                     <div class="four wide field">
-                        <label>Rua</label>
-                        <input type="text" name="street" placeholder="Rua, alameda, avenida, ...">
+                      {!! Form::label('street', 'Rua') !!}
+                      {!! Form::text('street') !!}
                     </div>
 
                     <div class="two wide field">
-                        <label>Número</label>
-                        <input type="text" name="number" placeholder="Número">
+                      {!! Form::label('number', 'Número') !!}
+                      {!! Form::text('number') !!}
                     </div>
 
                     <div class="three wide field">
-                        <label>Bairro</label>
-                        <input type="text" name="neighborhood" placeholder="Nome do bairro">
+                      {!! Form::label('neighborhood', 'Bairro') !!}
+                      {!! Form::text('neighborhood') !!}
                     </div>
 
                     <div class="three wide field">
-                        <label>Cidade</label>
-                        <input type="text" name="city" placeholder="Nome da Cidade">
+                      {!! Form::label('city', 'Cidade') !!}
+                      {!! Form::text('city') !!}
                     </div>
 
                     <div class="two wide field">
-                        <label>Estado</label>
-                        <input type="text" name="state" placeholder="Sigla">
+                      {!! Form::label('country', 'Estado') !!}
+                      {!! Form::text('country') !!}
                     </div>
                 </div>
 
                 <div class="two fields">
                     <div class="three wide field">
-                        <label>Telefone</label>
-                        <input type="text" name="telephone" placeholder="DDD e número">
+                      {!! Form::label('phone', 'Telefone') !!}
+                      {!! Form::text('phone') !!}
                     </div>
 
                     <div class="three wide field">
-                        <label>Celular</label>
-                        <input type="text" name="cellphone" placeholder="DDD e número">
+                      {!! Form::label('cellphone', 'Celular') !!}
+                      {!! Form::text('cellphone') !!}
                     </div>
                 </div>
 
-                <button class="ui button" type="submit">Submit</button>
+                <!-- <button class="ui button" type="submit">Submit</button> -->
             </form>
         </div>
         <div class="actions">
@@ -358,4 +261,3 @@
     </script>
 </body>
 </html>
-
