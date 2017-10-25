@@ -37,6 +37,11 @@ body {
   margin-top: 6em;
 }
 
+.ui.tab.segment {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
 //Grid for showing timeline and evolution information
 
 .wrapper {

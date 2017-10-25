@@ -21,7 +21,7 @@
                         </div>
                         <div class="content">
                             <span class="transition visible">Supíno Reto</span>
-                            <span style="float: right">1</span>
+                            <span>1</span>
                         </div>
                     </div>
                 </div>

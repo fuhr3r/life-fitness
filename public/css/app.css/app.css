@@ -17,6 +17,10 @@ body {
 #first {
   margin-top: 6em; }
 
+.ui.tab.segment {
+  max-height: 400px;
+  overflow-y: auto; }
+
 .wrapper {
   display: flex; }
   .wrapper .timeline.container {
