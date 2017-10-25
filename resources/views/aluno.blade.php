@@ -52,12 +52,15 @@
 
     ---------------TESTE---------------
     <br>
+
+
     @forelse($user_exercises as $day => $exercises)
         <b>{{$day}}</b><br>
-        @foreach($exercises as $exercise)
-            parte: {{$exercise->exercise->part->name}}<br>
-            exercicio: {{$exercise->exercise->name}}<br>
-            <hr>
+        @foreach($exercises as $key => $ex)
+            ----{{$key}}<br>
+            @foreach($ex as $a)
+                --------{{$a->exercise->name}}<br>
+            @endforeach
         @endforeach
     @empty
         vazio

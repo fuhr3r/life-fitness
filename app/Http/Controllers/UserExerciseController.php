@@ -8,6 +8,7 @@ use App\User;
 use App\Day;
 use App\User_Exercise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserExerciseController extends Controller
 {
@@ -53,6 +54,28 @@ class UserExerciseController extends Controller
                        ->where('day_id', $day_id)
                        ->get();
         }
+
+        $parts = Part::pluck('name', 'id');
+
+
+        $partes = [];
+
+
+        foreach ($days as $day_id => $day){
+            foreach ($parts as $part_id => $part){
+                $x = User_Exercise::with('exercise')->whereHas('exercise', function ($query) use ($part_id){
+                    $query->where('part_id', '=', $part_id);
+                })->where('day_id', '=', $day_id)->where('user_id', '=', $user->id)
+                  ->get();
+
+                if ($x->first())
+                    $partes[$part] = $x;
+
+            }
+            $user_exercises[$day] = $partes;
+            $partes = [];
+        }
+
 
         //$exercises = Exercise::pluck('name', 'id');
         return view('aluno',
