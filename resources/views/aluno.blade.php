@@ -57,9 +57,9 @@
     @forelse($user_exercises as $day => $exercises)
         <b>{{$day}}</b><br>
         @foreach($exercises as $key => $ex)
-            ----{{$key}}<br>
+            --{{$key}}<br>
             @foreach($ex as $a)
-                --------{{$a->exercise->name}}<br>
+                ------{{$a->exercise->name}}<br>
             @endforeach
         @endforeach
     @empty

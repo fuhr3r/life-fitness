@@ -8,7 +8,6 @@ use App\User;
 use App\Day;
 use App\User_Exercise;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class UserExerciseController extends Controller
 {
@@ -56,10 +55,7 @@ class UserExerciseController extends Controller
         }
 
         $parts = Part::pluck('name', 'id');
-
-
         $partes = [];
-
 
         foreach ($days as $day_id => $day){
             foreach ($parts as $part_id => $part){
@@ -73,6 +69,7 @@ class UserExerciseController extends Controller
 
             }
             $user_exercises[$day] = $partes;
+
             $partes = [];
         }
 
