@@ -20,8 +20,36 @@
                             Peitoral
                         </div>
                         <div class="content">
-                            <span class="transition visible">Supíno Reto</span>
-                            <span>1</span>
+                            <table class="ui very basic table">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th><i class="bookmark icon"></i></th>
+                                    <th><i class="bookmark icon"></i></th>
+                                    <th><i class="bookmark icon"></i></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Supino Reto <i class="trash outline icon"></i></td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                </tr>
+                                <tr>
+                                    <td>Supino Reto</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                </tr>
+                                <tr>
+                                    <td>Supino Reto</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -44,7 +72,7 @@
                     </div>
                 </div>
                 <div class="info container">
-                   form de evolução
+                    form de evolução
                 </div>
             </div>
         </div>
@@ -65,41 +93,157 @@
     @empty
         vazio
     @endforelse
-    ---------------TESTE---------------
-    <br>
-
-    <div>
 
 
-        {!! Form::open(['action' => ['UserExerciseController@store', $user->id]] ) !!}
+    <div class="ui large edit user modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Editar Aluno
+        </div>
+        <div class="content">
+            <form class="ui form" method="POST" action="{{ route('register') }}">
+                {{ csrf_field() }}
+                <div class="fields">
+                    <div class="five wide field">
+                        {!! Form::label('name', 'Nome')!!}
+                        {!! Form::text('name')!!}
+                    </div>
 
-        parte
-        {!! Form::select('parts', $parts, null, ['id' => 'parts_select']) !!}
+                    <div class="three wide field">
+                        {!! Form::label('cpf', 'CPF') !!}
+                        {!! Form::text('cpf') !!}
+                    </div>
 
-        exercicio
-        {!! Form::select('exercise', [], null, ['id' => 'exercises_select']) !!}
+                    <div class="four wide field">
+                        {!! Form::label('email', 'Email') !!}
+                        {!! Form::text('email') !!}
+                    </div>
 
-        serie
-        {!! Form::number('serie') !!}
+                    <div class="two wide field">
+                        {!! Form::label('gender', 'Sexo') !!}
+                        {!! Form::select('gender', ["h"=>"Masculino", "f"=>"Feminino"]) !!}
+                    </div>
 
-        repetições
-        {!! Form::number('repetitions') !!}
+                    <div class="four wide field">
+                        {!! Form::label('birth_date', 'Data de Nascimento') !!}
+                        {!! Form::text('birth_date') !!}
+                    </div>
 
-        peso
-        {!! Form::number('weight') !!}
+                    <div class="three wide field">
+                        {!! Form::label('job', 'Profissão') !!}
+                        {!! Form::text('job') !!}
+                    </div>
 
-        dia
-        {!! Form::select('day_id', $days) !!}
+                </div>
 
-        {!! Form::submit('Cadastrar') !!}
+                <div class="fields">
 
-        {!! Form::close() !!}
+                    <div class="three wide field">
+                        <label for="cep">CEP</label>
+                        <input type="text" name="cep">
+                    </div>
 
+                    <div class="four wide field">
+                        {!! Form::label('street', 'Endereço') !!}
+                        {!! Form::text('street') !!}
+                    </div>
+
+                    <div class="two wide field">
+                        {!! Form::label('home_number', 'Número') !!}
+                        {!! Form::text('home_number') !!}
+                    </div>
+
+                    <div class="three wide field">
+                        {!! Form::label('neighborhood', 'Bairro') !!}
+                        {!! Form::text('neighborhood') !!}
+                    </div>
+
+                    <div class="three wide field">
+                        {!! Form::label('city', 'Cidade') !!}
+                        {!! Form::text('city') !!}
+                    </div>
+
+                    <div class="two wide field"> {{--TODO: create a field for state in Address model--}}
+                        {!! Form::label('state', 'Estado') !!}
+                        {!! Form::text('state') !!}
+                    </div>
+
+                </div>
+
+                <div class="two fields">
+
+                    <div class="three wide field">
+                        {!! Form::label('phone', 'Telefone') !!}
+                        {!! Form::text('phone') !!}
+                    </div>
+
+                    <div class="three wide field">
+                        {!! Form::label('cellphone', 'Celular') !!}
+                        {!! Form::text('cellphone') !!}
+                    </div>
+                </div>
+
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+            @endif
+
+        </div>
+        <div class="actions">
+            <div class="ui button">Cancelar</div>
+            {!! Form::submit('Cadastrar', ['class' => 'ui button']) !!}
+            {!! Form::close() !!}
+        </div>
+        </form>
     </div>
+    <div class="ui training modal">
+        <i class="close icon"></i>
+        <div class="header">
+            Adicionar Treino
+        </div>
+        <div class="content">
+            {!! Form::open(['action' => ['UserExerciseController@store', $user->id], 'class' => 'ui form'] ) !!}
+            {{ csrf_field() }}
+            <div class="fields">
+                <div class="five wide field">
+                    {!! Form::label('parts', 'Selecione a parte do corpo')!!}
+                    {!! Form::select('parts', $parts, null, ['id' => 'parts_select']) !!}
+                </div>
 
+                <div class="three wide field">
+                    {!! Form::label('exercise', 'Exercício') !!}
+                    {!! Form::select('exercise', [], null, ['id' => 'exercises_select']) !!}
+                </div>
+            </div>
 
+            <div class="fields">
+                <div class="three wide field">
+                    {!! Form::label('day_id', 'Dia da Semana') !!}
+                    {!! Form::select('day_id', $days) !!}
+                </div>
+            </div>
 
-
-
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+        <div class="actions">
+            <div class="ui button">Cancelar</div>
+            {!! Form::submit('Cadastrar', ['class' => 'ui button']) !!}
+            {!! Form::close() !!}
+        </div>
+        </form>
+    </div>
 
 @endsection

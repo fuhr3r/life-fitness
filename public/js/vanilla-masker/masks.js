@@ -13,3 +13,6 @@ VMasker(document.querySelector("input[name=telephone")).maskPattern("(99) 9999-9
 
 //Cellphone
 VMasker(document.querySelector("input[name=cellphone]")).maskPattern("(99) 99999-9999");
+
+//
+VMasker(document.querySelector("input[name=date]")).maskPattern("99/99/9999");

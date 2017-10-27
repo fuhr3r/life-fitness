@@ -26,4 +26,8 @@ $('.new.exercise.action').click(function () {
     $('.ui.exercise.modal').modal('show');
 });
 
+$('.new.training.action').click(function () {
+    $('.ui.training.modal').modal('show');
+});
+
 $('.ui.accordion').accordion();
