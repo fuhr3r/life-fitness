@@ -37,6 +37,7 @@ class UserExerciseController extends Controller
     public function listUsers(){
         $users = User::all();
         $parts = Part::pluck('name', 'id');
+
         return view('adm', ['users' => $users, 'parts' => $parts]);
     }
 
@@ -45,23 +46,7 @@ class UserExerciseController extends Controller
         $days = Day::pluck('name', 'id');
         $parts = Part::pluck('name', 'id');
 
-        $user_exercises = [];
-        $exercise_parts = [];
-
-        foreach ($days as $day_id => $day){
-            foreach ($parts as $part_id => $part){
-                $exercise = User_Exercise::with('exercise')->whereHas('exercise', function ($query) use ($part_id){
-                    $query->where('part_id', '=', $part_id);
-                })->where('day_id', '=', $day_id)->where('user_id', '=', $user->id)
-                  ->get();
-
-                if ($exercise->first())
-                    $exercise_parts[$part] = $exercise;
-            }
-
-            $user_exercises[$day] = $exercise_parts;
-            $exercise_parts = [];
-        }
+        $user_exercises = $this->getUserExercises($user->id);
 
         return view('aluno',
             ['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
@@ -73,8 +58,57 @@ class UserExerciseController extends Controller
 
     }
 
+    public function update(Request $request, $id, $exercise_id){
+        dd($id);
+        $user = User::find($id);
+        $days = Day::pluck('name', 'id');
+        $parts = Part::pluck('name', 'id');
+
+        $user_exercise = User_Exercise::find($id);
+
+        $user_exercise->exercise->name = $request->exercise_name;
+        $user_exercise->serie = $request->serie;
+        $user_exercise->repetitions = $request->repetitions;
+        $user_exercise->weight = $request->weight;
+
+        $user_exercise->save();
+
+        $user_exercises = $this->getUserExercises($user->id);
+
+        return view('aluno',
+            ['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
+
+
+    }
+
     public function destroy($id){
 
+    }
+
+
+    private function getUserExercises($user_id){
+        $days = Day::pluck('name', 'id');
+        $parts = Part::pluck('name', 'id');
+
+        $user_exercises = [];
+        $exercise_parts = [];
+
+        foreach ($days as $day_id => $day){
+            foreach ($parts as $part_id => $part){
+                $exercise = User_Exercise::with('exercise')->whereHas('exercise', function ($query) use ($part_id){
+                    $query->where('part_id', '=', $part_id);
+                })->where('day_id', '=', $day_id)->where('user_id', '=', $user_id)
+                    ->get();
+
+                if ($exercise->first())
+                    $exercise_parts[$part] = $exercise;
+            }
+
+            $user_exercises[$day] = $exercise_parts;
+            $exercise_parts = [];
+        }
+
+        return $user_exercises;
     }
 
 
