@@ -21,6 +21,14 @@ body {
   max-height: 400px;
   overflow-y: auto; }
 
+.ui.table .options.cell {
+  display: flex;
+  justify-content: space-around;
+  opacity: 0;
+  transition: opacity 0.2s; }
+  .ui.table .options.cell:hover {
+    opacity: 1; }
+
 .wrapper {
   display: flex; }
   .wrapper .timeline.container {
