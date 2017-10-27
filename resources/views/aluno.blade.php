@@ -24,7 +24,6 @@
                                         {{$part}}
                                     </div>
                                     @foreach($exercise as $ex)
-
                                         <div class="content">
                                             <table class="ui very basic table">
                                                 <thead>
@@ -83,20 +82,13 @@
         </div>
     </div>
 
-    ---------------TESTE---------------
-    <br>
-
-
-
-
-
     <div class="ui large edit user modal">
         <i class="close icon"></i>
         <div class="header">
             Editar Aluno
         </div>
         <div class="content">
-            <form class="ui form" method="POST" action="{{ route('register') }}">
+            {!! Form::open(['route' => 'register']) !!}
                 {{ csrf_field() }}
                 <div class="fields">
                     <div class="five wide field">
@@ -194,7 +186,6 @@
             {!! Form::submit('Cadastrar', ['class' => 'ui button']) !!}
             {!! Form::close() !!}
         </div>
-        </form>
     </div>
     <div class="ui training modal">
         <i class="close icon"></i>
@@ -214,6 +205,15 @@
                     {!! Form::label('exercise', 'Exercício') !!}
                     {!! Form::select('exercise', [], null, ['id' => 'exercises_select']) !!}
                 </div>
+
+                serie
+                {!! Form::number('serie') !!}
+
+                repetições
+                {!! Form::number('repetitions') !!}
+
+                peso
+                {!! Form::number('weight') !!}
             </div>
 
             <div class="fields">
