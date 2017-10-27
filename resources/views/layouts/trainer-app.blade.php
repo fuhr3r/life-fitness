@@ -16,9 +16,20 @@
 
 <div class="ui fixed inverted menu">
     <div class="ui container">
-        <div class="header item disabled">
-            {{--<img class="ui mini circular image konata" src="images/maxresdefault.jpg">--}}
-            <span class="main title">Home</span>
+        <div class="header item">
+            @if (Request::segment(1) == 'aluno')
+                <a href="/admin"><i class="chevron left icon action"></i></a>
+                @elseif(Request::segment(1) == 'admin')
+                <i class="chevron left icon disabled action"></i>
+            @endif
+        </div>
+        <div class="header item">
+            {{--Todo: gambiarra bruno, desfaça.--}}
+            @if (Request::segment(1) == 'aluno')
+                <span class="main title">Aluno</span>
+            @elseif(Request::segment(1) == 'admin')
+                <span class="main title">Home</span>
+            @endif
         </div>
 
         <div class="right menu">

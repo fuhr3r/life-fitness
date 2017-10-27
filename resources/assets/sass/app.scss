@@ -60,6 +60,11 @@ body {
 
 //BUTTONS AND LINKS
 
+.item .disabled.action{
+  pointer-events: none;
+  visibility: hidden;
+}
+
 .action {
   cursor: pointer;
 }

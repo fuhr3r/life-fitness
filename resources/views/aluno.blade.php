@@ -20,8 +20,36 @@
                             Peitoral
                         </div>
                         <div class="content">
-                            <span class="transition visible">Supíno Reto</span>
-                            <span>1</span>
+                            <table class="ui very basic table">
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th><i class="bookmark icon"></i></th>
+                                    <th><i class="bookmark icon"></i></th>
+                                    <th><i class="bookmark icon"></i></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Supino Reto <i class="trash outline icon"></i></td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                </tr>
+                                <tr>
+                                    <td>Supino Reto</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                </tr>
+                                <tr>
+                                    <td>Supino Reto</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                    <td>99</td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -217,8 +245,5 @@
         </div>
         </form>
     </div>
-
-
-
 
 @endsection

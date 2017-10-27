@@ -29,6 +29,10 @@ body {
 .ui.form input[type=text]:disabled {
   background: #e8e8e8; }
 
+.item .disabled.action {
+  pointer-events: none;
+  visibility: hidden; }
+
 .action {
   cursor: pointer; }
 
