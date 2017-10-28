@@ -25,12 +25,12 @@ class UserExerciseController extends Controller
             ->save($exercise, $request->only(['serie', 'repetitions', 'weight', 'day_id']));
 
         $exercises = Exercise::pluck('name', 'id');
-        $user_exercise = User_Exercise::where('user_id', $user->id)->with('exercise')->get();
+        $user_exercises = $this->getUserExercises($user->id);
         $parts = Part::pluck('name', 'id');
         $days = Day::pluck('name', 'id');
 
         return view('aluno',
-            ['user' => $user, 'user_exercise' => $user_exercise, 'exercises' => $exercises, 'parts' => $parts, 'days' => $days]);
+            ['user' => $user, 'user_exercises' => $user_exercises, 'exercises' => $exercises, 'parts' => $parts, 'days' => $days]);
     }
 
 
@@ -102,6 +102,8 @@ class UserExerciseController extends Controller
 
                 if ($exercise->first())
                     $exercise_parts[$part] = $exercise;
+
+
             }
 
             $user_exercises[$day] = $exercise_parts;
