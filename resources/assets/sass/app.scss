@@ -42,6 +42,21 @@ body {
   overflow-y: auto;
 }
 
+//options icons for editing and removing
+
+.ui.table {
+  .options.cell {
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
 //Grid for showing timeline and evolution information
 
 .wrapper {
@@ -60,7 +75,7 @@ body {
 
 //BUTTONS AND LINKS
 
-.item .disabled.action{
+.item .disabled.action {
   pointer-events: none;
   visibility: hidden;
 }

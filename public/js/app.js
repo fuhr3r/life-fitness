@@ -31,3 +31,9 @@ $('.new.training.action').click(function () {
 });
 
 $('.ui.accordion').accordion();
+
+$('tr').mouseenter(function () {
+   $(this).children(".options.cell").css("opacity", 1)
+}).mouseleave(function () {
+    $(this).children(".options.cell").css("opacity", 0)
+});
