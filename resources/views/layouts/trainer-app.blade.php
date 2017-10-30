@@ -8,8 +8,8 @@
     <meta name="theme-color" content="#000000"/>
 
     {{--<link rel="icon" sizes="192x192" href="nice-highres.png"> //logo--}}
-    <link rel="stylesheet" href="{{ URL::asset('semantic/semantic.css') }}"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css/app.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::asset('semantic/semantic.css', array(), true) }}"/>
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css/app.css', array(), true) }}"/>
     @stack('admin-nav-bar')
 </head>
 <body>
@@ -62,8 +62,8 @@
 
 @yield('content')
 
-<script src="{{ URL::asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
-<script src="{{ URL::asset('semantic/semantic.js') }}"></script>
+<script src="{{ URL::asset('js/jquery/jquery-3.2.1.min.js', array(), true) }}"></script>
+<script src="{{ URL::asset('semantic/semantic.js', array(), true) }}"></script>
 
 <script src="{{ URL::asset('js/hammer-js/hammer.min.js') }}"></script>
 <script src="{{ URL::asset('js/hammer-js/hammer-time.min.js') }}"></script>
