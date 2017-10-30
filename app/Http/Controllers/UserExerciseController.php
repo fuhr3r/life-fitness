@@ -8,6 +8,7 @@ use App\User;
 use App\Day;
 use App\User_Exercise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class UserExerciseController extends Controller
 {
@@ -29,10 +30,9 @@ class UserExerciseController extends Controller
         $parts = Part::pluck('name', 'id');
         $days = Day::pluck('name', 'id');
 
-        return view('aluno',
-            ['user' => $user, 'user_exercises' => $user_exercises, 'exercises' => $exercises, 'parts' => $parts, 'days' => $days]);
-    }
 
+        return redirect()->route('aluno', ['id'=>$user->id])->with(['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
+    }
 
     public function listUsers(){
         $users = User::all();
@@ -59,7 +59,6 @@ class UserExerciseController extends Controller
     }
 
     public function update(Request $request, $id, $exercise_id){
-        dd($id);
         $user = User::find($id);
         $days = Day::pluck('name', 'id');
         $parts = Part::pluck('name', 'id');
@@ -84,7 +83,6 @@ class UserExerciseController extends Controller
     public function destroy($id){
 
     }
-
 
     private function getUserExercises($user_id){
         $days = Day::pluck('name', 'id');
@@ -112,7 +110,5 @@ class UserExerciseController extends Controller
 
         return $user_exercises;
     }
-
-
 
 }

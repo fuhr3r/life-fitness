@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/admin', 'UserExerciseController@listUsers');
 
-Route::get('/aluno/{id}', 'UserExerciseController@listExercises');
+Route::get('/aluno/{id}', 'UserExerciseController@listExercises')->name('aluno');
 
 Auth::routes();
 
@@ -29,9 +29,9 @@ Route::resource('exercise', 'ExerciseController');
 
 //Route::get('/user', 'UserExerciseController@showUsers');
 Route::get('/user/{id}/exercise', 'UserExerciseController@index');
-Route::get('/user/{id}/exercise/create', 'UserExerciseController@create');
+//Route::get('/user/{id}/exercise/create', 'UserExerciseController@create');
 Route::post('/user/{id}/exercise/create', 'UserExerciseController@store')->name('user.exercises');
-Route::get('/user/{id}/exercise/create', 'UserExerciseController@store')->name('user.exercises');
+//Route::get('/user/{id}/exercise/create', 'UserExerciseController@store')->name('user.exercises');
 Route::get('/part/{id}/get-exercises', 'UserExerciseController@listExercisesByPart');
 
 Route::post('/user/{id}/exercise/{exercise_id}/update', 'UserExerciseController@update');
