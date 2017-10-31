@@ -74,8 +74,7 @@
 <script src="{{ URL::asset('js/cep.js') }}"></script>
 
 <script src="{{ URL::asset('js/app.js') }}"></script>
-
-<script type="text/javascript">
+<script>
     $('#parts_select').on('change', function (e) {
         part_id = $(this).val();
         url = '/part/' + part_id + '/get-exercises';

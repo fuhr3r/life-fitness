@@ -1,10 +1,10 @@
-$('#menuButton').click(function(event) {
+$('#menuButton').click(function (event) {
     $('.ui.sidebar').sidebar('toggle');
 });
 
 let resim = $("body");
 
-resim.hammer().on("swiperight", function(ev) {
+resim.hammer().on("swiperight", function (ev) {
     $('.ui.sidebar').sidebar('toggle');
 });
 
@@ -27,13 +27,31 @@ $('.new.exercise.action').click(function () {
 });
 
 $('.new.training.action').click(function () {
-    $('.ui.training.modal').modal('show');
+    $('.ui.training.modal:not(.edit)').modal('show');
 });
 
 $('.ui.accordion').accordion();
 
 $('tr').mouseenter(function () {
-   $(this).children(".options.cell").css("opacity", 1)
+    $(this).find(".icon.action").css("opacity", 1)
 }).mouseleave(function () {
-    $(this).children(".options.cell").css("opacity", 0)
+    $(this).find(".icon.action").css("opacity", 0)
 });
+
+
+////////////////////////////////////////
+
+$('.edit.action').click(function () {
+    let repetition = $(this).parent().prevAll('.repetition.value').text();
+    let serie = $(this).parent().prevAll('.serie.value').text();
+    let weight = $(this).parent().prevAll('.weight.value').text();
+
+    let modal = $('.ui.edit.training.modal');
+    $(modal).modal('show');
+    $(modal).find('input[name=repetitions]').val(repetition);
+    $(modal).find('input[name=serie]').val(serie);
+    $(modal).find('input[name=weight]').val(weight);
+});
+
+
+

@@ -46,7 +46,7 @@
             Adicionar Aluno
         </div>
         <div class="content">
-            <form class="ui form" method="POST" action="{{ route('register') }}">
+            {!! Form::open(['route' => 'register', 'class' => 'ui form']) !!}
                 {{ csrf_field() }}
                 <div class="fields">
                     <div class="five wide field">
@@ -137,7 +137,7 @@
                         </ul>
                     </div>
             @endif
-
+            {!! Form::close() !!}
         </div>
         <div class="actions">
             <div class="ui button">Cancelar</div>
