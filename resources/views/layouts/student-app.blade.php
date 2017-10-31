@@ -8,22 +8,22 @@
     <meta name="theme-color" content="#000000"/>
 
     {{--<link rel="icon" sizes="192x192" href="nice-highres.png"> //logo--}}
-    <link rel="stylesheet" href="{{ URL::asset('semantic/semantic.css') }}"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/app.css/app.css') }}"/>
-    <link rel="stylesheet" href="{{ URL::asset('css/training-grid.css/training-grid.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::secure_asset('semantic/semantic.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::secure_asset('css/app.css/app.css') }}"/>
+    <link rel="stylesheet" href="{{ URL::secure_asset('css/training-grid.css/training-grid.css') }}"/>
 </head>
 <body>
 
 @yield('content')
 
-<script src="{{ URL::asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
-<script src="{{ URL::asset('semantic/semantic.js') }}"></script>
+<script src="{{ URL::secure_asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ URL::secure_asset('semantic/semantic.js') }}"></script>
 
-<script src="{{ URL::asset('js/hammer-js/hammer.min.js') }}"></script>
-<script src="{{ URL::asset('js/hammer-js/hammer-time.min.js') }}"></script>
-<script src="{{ URL::asset('js/hammer-js/jquery.hammer.js') }}"></script>
+<script src="{{ URL::secure_asset('js/hammer-js/hammer.min.js') }}"></script>
+<script src="{{ URL::secure_asset('js/hammer-js/hammer-time.min.js') }}"></script>
+<script src="{{ URL::secure_asset('js/hammer-js/jquery.hammer.js') }}"></script>
 
-<script src="{{ URL::asset('js/app.js') }}"></script>
+<script src="{{ URL::secure_asset('js/app.js') }}"></script>
 </body>
 </html>
 
