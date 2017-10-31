@@ -81,7 +81,6 @@
         url = '/part/' + part_id + '/get-exercises';
         $('#exercises_select').empty();
         $.get(url, function (data) {
-            console.log(data);
             $.each(data, function (index, exercise) {
                 $('#exercises_select').append(`<option value="${exercise.id}">${exercise.name}</option>`);
             })
