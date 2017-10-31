@@ -23,30 +23,31 @@
                                         <i class="dropdown icon"></i>
                                         {{$part}}
                                     </div>
-                                    @foreach($exercise as $ex)
-                                        <div class="content">
-                                            <table class="ui very basic table">
-                                                <thead>
-                                                <tr>
-                                                    <th class="four wide"></th>
-                                                    <th><i class="bookmark icon"></i></th>
-                                                    <th><i class="bookmark icon"></i></th>
-                                                    <th><i class="bookmark icon"></i></th>
-                                                    <th class="three wide"></th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
+                                    <div class="content">
+                                        <table class="ui very basic table">
+                                            <thead>
+                                            <tr>
+                                                <th class="four wide"></th>
+                                                <th><i class="bookmark icon"></i></th>
+                                                <th><i class="bookmark icon"></i></th>
+                                                <th><i class="bookmark icon"></i></th>
+                                                <th class="three wide"></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach($exercise as $ex)
                                                 <tr>
                                                     <td>{{$ex->exercise->name}}
                                                     <td>{{$ex->serie}}</td>
                                                     <td>{{$ex->repetitions}}</td>
                                                     <td>{{$ex->weight}}</td>
-                                                    <td class="options cell"><i class="trash outline icon action"></i><i class="edit icon action"></i></td>
+                                                    <td class="options cell"><i class="trash outline icon action"></i><i
+                                                                class="edit icon action"></i></td>
                                                 </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    @endforeach
+                                            @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
