@@ -46,7 +46,7 @@
 
             @if (Request::segment(1) == 'aluno')
                 <div class="ui item">
-                    <i class="edit icon action edit user action"></i>
+                    <i class="edit user icon action"></i>
                     {{--                        <img src="{{ URL::asset('images/icons/sidebar/log-out.svg') }}" alt="" class="new user action">--}}
                 </div>
                 <div class="ui item">

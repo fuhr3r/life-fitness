@@ -41,16 +41,28 @@ $('tr').mouseenter(function () {
 
 ////////////////////////////////////////
 
-$('.edit.action').click(function () {
+$('.edit.user.action').click(function () {
+   $('.ui.student.modal').modal('show');
+});
+
+$('.edit.training.action').click(function () {
     let repetition = $(this).parent().prevAll('.repetition.value').text();
     let serie = $(this).parent().prevAll('.serie.value').text();
     let weight = $(this).parent().prevAll('.weight.value').text();
 
-    let modal = $('.ui.edit.training.modal');
-    $(modal).modal('show');
-    $(modal).find('input[name=repetitions]').val(repetition);
-    $(modal).find('input[name=serie]').val(serie);
-    $(modal).find('input[name=weight]').val(weight);
+    $('.ui.training.modal').modal({
+        onShow: function () {
+            $(this).find('.header').html('Editar Treino');
+            $(this).find('input[name=repetitions]').val(repetition);
+            $(this).find('input[name=serie]').val(serie);
+            $(this).find('input[name=weight]').val(weight);
+        },
+        onHidden: function () {
+            $('input[name=repetitions],input[name=serie],input[name=weight]').val('');
+            $(this).find('.header').html('Adicionar Treino');
+            $(this).modal({});
+        }
+    }).modal('show');
 });
 
 $('.parts.select').on('change', function () {
