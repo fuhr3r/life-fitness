@@ -74,18 +74,6 @@
 <script src="{{ URL::asset('js/cep.js') }}"></script>
 
 <script src="{{ URL::asset('js/app.js') }}"></script>
-<script>
-    $('#parts_select').on('change', function (e) {
-        part_id = $(this).val();
-        url = '/part/' + part_id + '/get-exercises';
-        $('#exercises_select').empty();
-        $.get(url, function (data) {
-            $.each(data, function (index, exercise) {
-                $('#exercises_select').append(`<option value="${exercise.id}">${exercise.name}</option>`);
-            })
-        })
-    });
-</script>
 </body>
 </html>
 

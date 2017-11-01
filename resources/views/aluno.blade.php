@@ -205,12 +205,12 @@
             <div class="fields">
                 <div class="four wide field">
                     {!! Form::label('parts', 'Selecione a parte do corpo')!!}
-                    {!! Form::select('parts', $parts, null, ['id' => 'parts_select']) !!}
+                    {!! Form::select('parts', $parts, null, ['class' => 'parts select']) !!}
                 </div>
 
                 <div class="five wide field">
                     {!! Form::label('exercise', 'Exercício') !!}
-                    {!! Form::select('exercise', [], null, ['id' => 'exercises_select']) !!}
+                    {!! Form::select('exercise', [], null, ['class' => 'exercises select']) !!}
                 </div>
             </div>
 

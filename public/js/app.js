@@ -53,5 +53,17 @@ $('.edit.action').click(function () {
     $(modal).find('input[name=weight]').val(weight);
 });
 
+$('.parts.select').on('change', function () {
+    let partId = $(this).val();
+    let url = '/part/' + partId + '/get-exercises';
+    $('.exercises.select').empty();
+    $.get(url, function (data) {
+        console.log(data);
+        $.each(data, function (index, exercise) {
+            $('.exercises.select').append(`<option value="${exercise.id}">${exercise.name}</option>`);
+        })
+    })
+});
+
 
 
