@@ -54,7 +54,15 @@
                 </div>
             @endif
             <div class="ui item">
-                <img src="{{ URL::asset('images/icons/sidebar/log-out.svg') }}" alt="" class="log out action">
+                <div class="ui icon top right pointing dropdown button">
+                    <i class="wrench icon"></i>
+                    <div class="menu">
+                        <div class="item">Partes do corpo e treinos cadastrados</div>
+                        <div class="item">Alterar Senha</div>
+                        <div class="ui divider"></div>
+                        <div class="item">Sair</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

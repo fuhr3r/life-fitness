@@ -44,10 +44,10 @@ body {
 
 //options icons for editing and removing
 
-.ui.table {
-  .options.cell {
-    display: flex;
-    justify-content: space-around;
+.container.options {
+  display: flex;
+  justify-content: space-around;
+  * {
     opacity: 0;
     transition: opacity 0.2s;
 
@@ -59,11 +59,35 @@ body {
 
 //Grid for showing timeline and evolution information
 
-.wrapper {
+.wrapper:not(.options) {
   display: flex;
 
   .timeline.container {
     width: 30%;
+  }
+}
+
+//styles for body parts and training view
+.ui.body.part.container {
+  display: flex;
+
+  .ui.segments {
+    &:first-child {
+      width: 25%;
+    }
+    margin: 0;
+    width: 70%;
+
+    .body.part.segment {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+
+      .container.options {
+        width: 115px;
+        margin-left: 1em;
+      }
+    }
   }
 }
 
@@ -92,7 +116,17 @@ body {
   }
 }
 
-//BOTTOM MENU
+.fields .ui.basic.button {
+  height: 38px;
+  align-self: flex-end;
+  width: 120px;
+}
+
+//MENU
+
+.top.right.pointing.dropdown .menu.left {
+  flex-direction: column;
+}
 
 .ui.fixed.inverted.bottom.menu {
   top: initial;

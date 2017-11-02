@@ -54,7 +54,7 @@
         @endif
     </div>
     <div class="actions">
-        <div class="ui button">Cancelar</div>
+        <div class="ui cancel button">Cancelar</div>
         {!! Form::submit('Cadastrar', ['class' => 'ui button']) !!}
         {!! Form::close() !!}
     </div>

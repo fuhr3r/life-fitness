@@ -8,9 +8,9 @@
             <a class="item" data-tab="second">Dados</a>
         </div>
 
-        @forelse($user_exercises as $day => $exercises)
-            @if($exercises)
-                <div class="ui bottom attached tab segment active" data-tab="first">
+        <div class="ui bottom attached tab segment active" data-tab="first">
+            @forelse($user_exercises as $day => $exercises)
+                @if($exercises)
                     <div class="ui fluid styled accordion">
                         <div class="active title">
                             <i class="dropdown icon"></i>
@@ -36,12 +36,13 @@
                                             </thead>
                                             <tbody>
                                             @foreach($exercise as $ex)
-                                                <tr>
+                                                <tr class="options wrapper">
                                                     <td>{{$ex->exercise->name}}
                                                     <td class="serie value">{{$ex->serie}}</td>
                                                     <td class="repetition value">{{$ex->repetitions}}</td>
                                                     <td class="weight value">{{$ex->weight}}</td>
-                                                    <td class="options cell"><i class="trash outline icon action"></i><i class="edit training icon action"></i></td>
+                                                    <td class="container options cell"><i class="trash outline icon action"></i><i
+                                                                class="edit training icon action"></i></td>
                                                 </tr>
                                             @endforeach
                                             </tbody>
@@ -51,10 +52,8 @@
                             </div>
                         @endforeach
                     </div>
-                </div>
-            @endif
-        @empty
-            <div class="ui bottom attached tab segment active" data-tab="first">
+                @endif
+            @empty
                 <div class="ui fluid styled accordion">
                     <div class="active title">
                         <i class="dropdown icon"></i>
@@ -64,8 +63,10 @@
                         asdasdas
                     </div>
                 </div>
-            </div>
-        @endforelse
+            @endforelse
+        </div>
+
+
         <div class="ui bottom attached tab segment" data-tab="second">
             <div>INFORMAÇÕES FIXAS</div>
             <div class="wrapper">

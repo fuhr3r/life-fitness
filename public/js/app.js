@@ -32,12 +32,17 @@ $('.new.training.action').click(function () {
 
 $('.ui.accordion').accordion();
 
-$('tr').mouseenter(function () {
+$('.options.wrapper').mouseenter(function () {
     $(this).find(".icon.action").css("opacity", 1)
 }).mouseleave(function () {
     $(this).find(".icon.action").css("opacity", 0)
 });
 
+$('.ui.cancel.button').click(function () {
+   $('.ui.modal').modal('hide');
+});
+
+$('.ui.dropdown').dropdown();
 
 ////////////////////////////////////////
 

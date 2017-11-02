@@ -22,12 +22,12 @@
                 {!! Form::text('email') !!}
             </div>
 
-            <div class="two wide field">
+            <div class="three wide field">
                 {!! Form::label('gender', 'Sexo') !!}
                 {!! Form::select('gender', ["h"=>"Masculino", "f"=>"Feminino"]) !!}
             </div>
 
-            <div class="four wide field">
+            <div class="three wide field">
                 {!! Form::label('birth_date', 'Data de Nascimento') !!}
                 {!! Form::text('birth_date') !!}
             </div>
@@ -36,12 +36,11 @@
                 {!! Form::label('job', 'Profissão') !!}
                 {!! Form::text('job') !!}
             </div>
-
         </div>
 
         <div class="fields">
 
-            <div class="three wide field">
+            <div class="two wide field">
                 <label for="cep">CEP</label>
                 <input type="text" name="cep">
             </div>
@@ -73,7 +72,7 @@
 
         </div>
 
-        <div class="two fields">
+        <div class="three fields">
 
             <div class="three wide field">
                 {!! Form::label('phone', 'Telefone') !!}
@@ -84,7 +83,19 @@
                 {!! Form::label('cellphone', 'Celular') !!}
                 {!! Form::text('cellphone') !!}
             </div>
+
+            <div class="two wide field">
+                <label for="">Senha</label>
+                <input type="password">
+            </div>
+            <div class="ui basic button">Gerar Senha</div>
         </div>
+
+        <div class="two fields">
+
+        </div>
+
+
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -98,7 +109,7 @@
         {!! Form::close() !!}
     </div>
     <div class="actions">
-        <div class="ui button">Cancelar</div>
+        <div class="ui cancel button">Cancelar</div>
         {!! Form::submit('Cadastrar', ['class' => 'ui button']) !!}
         {!! Form::close() !!}
     </div>
