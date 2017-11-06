@@ -14,6 +14,9 @@ body {
   font-size: 2.2em;
   color: white; }
 
+.pointing.dropdown .menu .item {
+  color: black; }
+
 #first {
   margin-top: 6em; }
 
@@ -35,20 +38,23 @@ body {
   .wrapper:not(.options) .timeline.container {
     width: 30%; }
 
-.ui.body.part.container {
+.ui.body.training.container {
   display: flex; }
-  .ui.body.part.container .ui.segments {
+  .ui.body.training.container .ui.segments {
     margin: 0;
     width: 70%; }
-    .ui.body.part.container .ui.segments:first-child {
+    .ui.body.training.container .ui.segments:first-child {
       width: 25%; }
-    .ui.body.part.container .ui.segments .body.part.segment {
+    .ui.body.training.container .ui.segments .body.part.segment, .ui.body.training.container .ui.segments .training.segment {
       display: flex;
       justify-content: space-between;
       cursor: pointer; }
-      .ui.body.part.container .ui.segments .body.part.segment .container.options {
-        width: 115px;
-        margin-left: 1em; }
+    .ui.body.training.container .ui.segments .body.part.segment .container.options {
+      width: 115px;
+      margin-left: 1em; }
+    .ui.body.training.container .ui.segments .training.segment .container.options {
+      width: 115px;
+      margin: 0 13em 0 0; }
 
 .ui.form input[type=text]:disabled {
   background: #e8e8e8; }
@@ -69,6 +75,9 @@ body {
   height: 38px;
   align-self: flex-end;
   width: 120px; }
+
+.is-selected {
+  font-weight: bold; }
 
 .top.right.pointing.dropdown .menu.left {
   flex-direction: column; }

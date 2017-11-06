@@ -2,11 +2,11 @@
 
 @section('content')
 
-    <div class="ui body part container" id="first">
-        <div class="ui segments">
+    <div class="ui body training container" id="first">
+        <div class="ui part segments">
             @forelse($parts as $part)
-                <div class="ui options wrapper body part segment">
-                    <span>{{$part->name}}</span>
+                <div class="ui options wrapper body part segment ">
+                    <span data-id="{{$part->id}}">{{$part->name}}</span>
                     {{--<a href="/part/{{$part->id}}">show</a>--}}
                     {{--<a href="/part/{{$part->id}}/edit"></a>--}}
 {{--                    {{ Form::open(['method' => 'DELETE', 'route' => ['part.destroy', $part->id] ]) }}--}}
@@ -23,17 +23,8 @@
                 Não há partes do corpo cadastradas
             @endforelse
         </div>
-        <div class="ui segments">
-            <div class="ui segment">
-                aaaaaaaaaaaaaaa
-            </div>
-
-            <div class="ui segment">
-                aaaaaaaaaaaaaaa
-            </div>
-            <div class="ui segment">
-                aaaaaaaaaaaaaaa
-            </div>
+        <div class="ui training segments">
+            Selecione uma parte do corpo
         </div>
     </div>
 

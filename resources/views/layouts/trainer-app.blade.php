@@ -19,7 +19,7 @@
         <div class="header item">
             @if (Request::segment(1) == 'aluno')
                 <a href="/admin"><i class="chevron left icon action"></i></a>
-                @elseif(Request::segment(1) == 'admin')
+            @elseif(Request::segment(1) == 'admin')
                 <i class="chevron left icon disabled action"></i>
             @endif
         </div>
@@ -29,6 +29,8 @@
                 <span class="main title">Aluno</span>
             @elseif(Request::segment(1) == 'admin')
                 <span class="main title">Home</span>
+            @elseif (Request::segment(1) == 'part')
+                <span class="main title">Partes do corpo e treinos cadastrados</span>
             @endif
         </div>
 
@@ -54,10 +56,12 @@
                 </div>
             @endif
             <div class="ui item">
-                <div class="ui icon top right pointing dropdown button">
+                <div class="ui icon top right pointing dropdown">
                     <i class="wrench icon"></i>
                     <div class="menu">
-                        <div class="item">Partes do corpo e treinos cadastrados</div>
+                        <a href="/part">
+                            <div class="item">Partes do corpo e treinos cadastrados</div>
+                        </a>
                         <div class="item">Alterar Senha</div>
                         <div class="ui divider"></div>
                         <div class="item">Sair</div>
