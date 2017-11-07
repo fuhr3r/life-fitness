@@ -54,6 +54,7 @@ $('.edit.user.action').click(function () {
 });
 
 $('.edit.training.action').click(function () {
+    $('.parts.select').change();
     let repetition = $(this).parent().prevAll('.repetition.value').text();
     let serie = $(this).parent().prevAll('.serie.value').text();
     let weight = $(this).parent().prevAll('.weight.value').text();
@@ -74,16 +75,7 @@ $('.edit.training.action').click(function () {
 });
 
 $('.parts.select').on('change', function () {
-    let partId = $(this).val();
-    console.log(partId);
-    let url = '/part/' + partId + '/get-exercises';
-    $('.exercises.select').empty();
-    $.get(url, function (data) {
-        console.log(data);
-        $.each(data, function (index, exercise) {
-            $('.exercises.select').append(`<option value="${exercise.id}">${exercise.name}</option>`);
-        })
-    })
+    populateSelect(this)
 });
 
 $('.body.part.segment').click(function () {
@@ -107,6 +99,19 @@ $('.body.part.segment').click(function () {
         })
     })
 });
+
+function populateSelect(select){
+    let partId = $(select).val();
+    console.log(partId);
+    let url = '/part/' + partId + '/get-exercises';
+    $('.exercises.select').empty();
+    $.get(url, function (data) {
+        console.log(data);
+        $.each(data, function (index, exercise) {
+            $('.exercises.select').append(`<option value="${exercise.id}">${exercise.name}</option>`);
+        })
+    })
+}
 
 
 
