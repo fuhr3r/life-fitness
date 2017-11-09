@@ -2,8 +2,8 @@
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="UTF-8"/>
-    <meta name=”viewport” content=”width=device-width, user-scalable=0; initial-scale=1.0, maximum-scale=1.0">
-    <meta name=”viewport” content=”width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;”>
+    <meta name="viewport" content="width=device-width, user-scalable=0; initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=false;">
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
     <meta name="theme-color" content="#000000"/>
 
@@ -46,7 +46,7 @@
 
             @if (Request::segment(1) == 'aluno')
                 <div class="ui item">
-                    <i class="edit icon action edit user action"></i>
+                    <i class="edit user icon action"></i>
                     {{--                        <img src="{{ URL::asset('images/icons/sidebar/log-out.svg') }}" alt="" class="new user action">--}}
                 </div>
                 <div class="ui item">
@@ -54,7 +54,15 @@
                 </div>
             @endif
             <div class="ui item">
-                <img src="{{ URL::asset('images/icons/sidebar/log-out.svg') }}" alt="" class="log out action">
+                <div class="ui icon top right pointing dropdown button">
+                    <i class="wrench icon"></i>
+                    <div class="menu">
+                        <div class="item">Partes do corpo e treinos cadastrados</div>
+                        <div class="item">Alterar Senha</div>
+                        <div class="ui divider"></div>
+                        <div class="item">Sair</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -74,19 +82,5 @@
 <script src="{{ URL::asset('js/cep.js') }}"></script>
 
 <script src="{{ URL::asset('js/app.js') }}"></script>
-
-<script type="text/javascript">
-    $('#parts_select').on('change', function (e) {
-        part_id = $(this).val();
-        url = '/part/' + part_id + '/get-exercises';
-        $('#exercises_select').empty();
-        $.get(url, function (data) {
-            $.each(data, function (index, exercise) {
-                $('#exercises_select').append(`<option value="${exercise.id}">${exercise.name}</option>`);
-            })
-        })
-    });
-</script>
 </body>
 </html>
-
