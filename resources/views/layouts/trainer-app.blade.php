@@ -37,11 +37,11 @@
         <div class="right menu">
             @if (Request::segment(1) == 'admin')
                 <div class="ui item">
-                    <i class="users icon new trainer action"></i>
+                    <img class="new trainer action" src="{{ URL::asset('images/icons/sidebar/trainer.svg') }}" alt="">
                     {{--                    <img src="{{ URL::asset('images/icons/sidebar/log-out.svg') }}" alt="" class="new trainer action">--}}
                 </div>
                 <div class="ui item">
-                    <i class="user icon new user action"></i>
+                    <img class="new user action" src="{{ URL::asset('images/icons/sidebar/student.svg') }}" alt="">
                     {{--                    <img src="{{ URL::asset('images/icons/sidebar/log-out.svg') }}" alt="" class="new user action">--}}
                 </div>
             @endif
@@ -57,7 +57,7 @@
             @endif
             <div class="ui item">
                 <div class="ui icon top right pointing dropdown">
-                    <i class="wrench icon"></i>
+                    <img src="{{ URL::asset('images/icons/sidebar/wrench.svg') }}" alt="">
                     <div class="menu">
                         <a href="/part">
                             <div class="item">Partes do corpo e treinos cadastrados</div>

@@ -14,6 +14,10 @@ body {
   font-size: 2.2em;
   color: white; }
 
+.ui.fixed.inverted.menu .ui.container .ui.item img {
+  height: 30px;
+  width: auto; }
+
 .pointing.dropdown .menu .item {
   color: black; }
 

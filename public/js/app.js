@@ -59,19 +59,7 @@ $('.edit.training.action').click(function () {
     let serie = $(this).parent().prevAll('.serie.value').text();
     let weight = $(this).parent().prevAll('.weight.value').text();
 
-    $('.ui.training.modal').modal({
-        onShow: function () {
-            $(this).find('.header').html('Editar Treino');
-            $(this).find('input[name=repetitions]').val(repetition);
-            $(this).find('input[name=serie]').val(serie);
-            $(this).find('input[name=weight]').val(weight);
-        },
-        onHidden: function () {
-            $('input[name=repetitions],input[name=serie],input[name=weight]').val('');
-            $(this).find('.header').html('Adicionar Treino');
-            $(this).modal({});
-        }
-    }).modal('show');
+    $('.ui.training.modal').modal('show');
 });
 
 $('.parts.select').on('change', function () {
