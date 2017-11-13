@@ -86,9 +86,8 @@
 
             <div class="two wide field">
                 <label for="">Senha</label>
-                <input type="password">
+                <input type="text">
             </div>
-            <div class="ui basic button">Gerar Senha</div>
         </div>
 
         <div class="two fields">

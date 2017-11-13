@@ -90,7 +90,8 @@
         </div>
     </div>
 
-    @include('components.student-form', ['title' => 'Editar Aluno'])
-    @include('components.training-form', ['title' => 'Adicionar treino'])
+    @include('components.student-form', ['title' => 'Editar Aluno', ])
+    @include('components.new-training-form')
+    @include('components.edit-training-form')
 
 @endsection
