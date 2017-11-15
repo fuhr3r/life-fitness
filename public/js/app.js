@@ -100,6 +100,3 @@ function populateSelect(select){
         })
     })
 }
-
-
-
