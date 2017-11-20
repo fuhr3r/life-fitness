@@ -15,7 +15,7 @@
 
             <div class="five wide field">
                 {!! Form::label('exercise', 'Exercício') !!}
-                {!! Form::select('exercise', [], null, ['class' => 'exercises select']) !!}
+                {!! Form::select('exercise', [], [], ['class' => 'exercises select']) !!}
             </div>
         </div>
 
@@ -40,7 +40,7 @@
         <div class="fields">
             <div class="three wide field">
                 {!! Form::label('day_id', 'Dia da Semana') !!}
-                {!! Form::select('day_id', $days) !!}
+                {!! Form::select('day_id', $days, ['required']) !!}
             </div>
         </div>
 

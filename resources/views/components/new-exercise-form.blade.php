@@ -12,7 +12,7 @@
             </div>
             <div class="five wide field">
                 {!! Form::label('name', 'Exercício') !!}
-                {!! Form::text('name') !!}
+                {!! Form::text('name', null, ['required']) !!}
             </div>
         </div>
     </div>

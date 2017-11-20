@@ -8,7 +8,7 @@
         <div class="fields">
             <div class="five wide field">
                 {!! Form::label('name', 'Parte do Corpo') !!}
-                {!! Form::text('name') !!}
+                {!! Form::text('name', null, ['required']) !!}
             </div>
         </div>
     </div>
