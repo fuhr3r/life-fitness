@@ -39,7 +39,7 @@
         </div>
 
         <div class="fields">
-
+                {{--todo: parou aqui--}}
             <div class="two wide field">
                 <label for="cep">CEP</label>
                 <input type="text" name="cep">
