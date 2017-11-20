@@ -4,7 +4,7 @@
         Editar Treino
     </div>
     <div class="content">
-        {!! Form::open(['action' => ['UserExerciseController@update', $user->id], 'class' => 'ui form'] ) !!}
+{{--        {!! Form::open(['action' => ['UserExerciseController@update', $user->id], 'class' => 'ui form'] ) !!}--}}
         {{ csrf_field() }}
         <div class="fields">
             <div class="four wide field">

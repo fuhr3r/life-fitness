@@ -11,7 +11,8 @@
         <div class="ui bottom attached tab segment active" data-tab="first">
             @forelse($user_exercises as $day => $exercises)
                 @if($exercises)
-                    <div class="ui fluid styled accordion">
+                    <div class="ui fluid styled accordion" data-id-exercise="{{--todo: $user_exercise--}}">
+                        <span>{{$exercises}}</span>
                         <div class="active title">
                             <i class="dropdown icon"></i>
                             <span>{{$day}}</span>
