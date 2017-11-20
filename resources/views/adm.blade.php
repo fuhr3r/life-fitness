@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    @include('components.student-form', ['title' => 'Adicionar Aluno'])
+    @include('components.new-student-form')
     <div class="ui large trainer modal">
         <i class="close icon"></i>
         <div class="header">

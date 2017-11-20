@@ -19,8 +19,6 @@
                         <div class="content">
                             <div class="accordion">
                                 @foreach($exercises as $part => $exercise)
-
-
                                     <div class="title">
                                         <i class="dropdown icon"></i>
                                         {{$part}}
@@ -96,7 +94,7 @@
         </div>
     </div>
 
-    @include('components.student-form', ['title' => 'Editar Aluno', ])
+    @include('components.edit-student-form')
     @include('components.new-training-form')
     @include('components.edit-training-form')
     @include('components.delete-training-form')
