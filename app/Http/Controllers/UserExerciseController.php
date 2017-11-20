@@ -8,8 +8,6 @@ use App\User;
 use App\Day;
 use App\User_Exercise;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Auth;
 
 class UserExerciseController extends Controller
 {
@@ -82,8 +80,15 @@ class UserExerciseController extends Controller
 
     }
 
-    public function destroy($id){
+    public function destroy(Request $request, $id){
+        User_Exercise::destroy($request->id);
 
+        $user = User::find($id);
+        $days = Day::pluck('name', 'id');
+        $parts = Part::pluck('name', 'id');
+        $user_exercises = $this->getUserExercises($user->id);
+
+        return redirect()->route('aluno', ['id'=>$user->id])->with(['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
     }
 
     private function getUserExercises($user_id){
