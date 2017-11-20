@@ -9,17 +9,17 @@
         <div class="fields">
             <div class="five wide field">
                 {!! Form::label('name', 'Nome')!!}
-                {!! Form::text('name')!!}
+                {!! Form::text('name', $user->name)!!}
             </div>
 
             <div class="three wide field">
                 {!! Form::label('cpf', 'CPF') !!}
-                {!! Form::text('cpf') !!}
+                {!! Form::text('cpf', $user->cpf) !!}
             </div>
 
             <div class="four wide field">
                 {!! Form::label('email', 'Email') !!}
-                {!! Form::text('email') !!}
+                {!! Form::text('email', $user->email) !!}
             </div>
 
             <div class="three wide field">
@@ -29,12 +29,12 @@
 
             <div class="three wide field">
                 {!! Form::label('birth_date', 'Data de Nascimento') !!}
-                {!! Form::text('birth_date') !!}
+                {!! Form::text('birth_date', $user->birth_date) !!}
             </div>
 
             <div class="three wide field">
                 {!! Form::label('job', 'Profissão') !!}
-                {!! Form::text('job') !!}
+                {!! Form::text('job', $user->job) !!}
             </div>
         </div>
 
@@ -47,27 +47,27 @@
 
             <div class="four wide field">
                 {!! Form::label('street', 'Endereço') !!}
-                {!! Form::text('street') !!}
+                {!! Form::text('street', $user->address->street) !!}
             </div>
 
             <div class="two wide field">
                 {!! Form::label('home_number', 'Número') !!}
-                {!! Form::text('home_number') !!}
+                {!! Form::text('home_number', $user->home_number) !!}
             </div>
 
             <div class="three wide field">
                 {!! Form::label('neighborhood', 'Bairro') !!}
-                {!! Form::text('neighborhood') !!}
+                {!! Form::text('neighborhood', $user->neighborhood) !!}
             </div>
 
             <div class="three wide field">
                 {!! Form::label('city', 'Cidade') !!}
-                {!! Form::text('city') !!}
+                {!! Form::text('city', $user->city) !!}
             </div>
 
             <div class="two wide field"> {{--TODO: create a field for state in Address model--}}
                 {!! Form::label('state', 'Estado') !!}
-                {!! Form::text('state') !!}
+                {!! Form::text('state', $user->state) !!}
             </div>
 
         </div>
@@ -76,22 +76,21 @@
 
             <div class="three wide field">
                 {!! Form::label('phone', 'Telefone') !!}
-                {!! Form::text('phone') !!}
+                {!! Form::text('phone', $user->phone) !!}
             </div>
 
             <div class="three wide field">
                 {!! Form::label('cellphone', 'Celular') !!}
-                {!! Form::text('cellphone') !!}
+                {!! Form::text('cellphone', $user->cellphone) !!}
             </div>
 
-            <div class="two wide field">
-                <label for="">Senha</label>
-                <input type="text" name="password">
-            </div>
         </div>
 
-        <div class="two fields">
-
+        <div class="fields">
+            <div class="two wide field">
+                {!! Form::label('password', 'Senha') !!}
+                {!! Form::text('password', $user->password) !!}
+            </div>
         </div>
 
 

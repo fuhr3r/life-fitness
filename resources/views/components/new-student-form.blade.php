@@ -1,7 +1,7 @@
 <div class="ui large student modal">
     <i class="close icon"></i>
     <div class="header">
-        {{$title}}
+        Adicionar Aluno
     </div>
     <div class="content">
         {!! Form::open(['route' => 'user-register', 'class' => 'ui form', 'id' => 'new-user']) !!}
