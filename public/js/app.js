@@ -56,6 +56,7 @@ $('.edit.user.action').click(function () {
 $('.edit.training.action').click(function () {
 
     $('.parts.select').change();
+
     let repetition = $(this).parent().prevAll('.repetition.value').text();
     let serie = $(this).parent().prevAll('.serie.value').text();
     let weight = $(this).parent().prevAll('.weight.value').text();

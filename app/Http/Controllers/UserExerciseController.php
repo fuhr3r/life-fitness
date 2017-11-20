@@ -9,6 +9,7 @@ use App\Day;
 use App\User_Exercise;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class UserExerciseController extends Controller
 {
@@ -59,16 +60,17 @@ class UserExerciseController extends Controller
     }
 
     public function update(Request $request, $id){
-        $user = Auth::user();
+
+        $user = User::find($id);
         $days = Day::pluck('name', 'id');
         $parts = Part::pluck('name', 'id');
 
-        $user_exercise = User_Exercise::find($id);
-
+        $user_exercise = User_Exercise::find($request->id);
         $user_exercise->exercise->name = $request->exercise_name;
         $user_exercise->serie = $request->serie;
         $user_exercise->repetitions = $request->repetitions;
         $user_exercise->weight = $request->weight;
+        $user_exercise->day()->associate(Day::find($request->day_id));
 
         $user_exercise->save();
 

@@ -16,9 +16,11 @@
                             <i class="dropdown icon"></i>
                             <span>{{$day}}</span>
                         </div>
-                        @foreach($exercises as $part => $exercise)
-                            <div class="content">
-                                <div class="accordion">
+                        <div class="content">
+                            <div class="accordion">
+                                @foreach($exercises as $part => $exercise)
+
+
                                     <div class="title">
                                         <i class="dropdown icon"></i>
                                         {{$part}}
@@ -50,9 +52,11 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
+
+
+                                @endforeach
                             </div>
-                        @endforeach
+                        </div>
                     </div>
                 @endif
             @empty
