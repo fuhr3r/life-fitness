@@ -44,7 +44,7 @@
                                                     <td class="repetition value">{{$ex->repetitions}}</td>
                                                     <td class="weight value">{{$ex->weight}}</td>
                                                     <td class="container options cell">
-                                                        <i class="trash outline icon action"></i>
+                                                        <i class="delete training trash outline icon action"></i>
                                                         <i class="edit training icon action"></i>
                                                     </td>
                                                 </tr>
@@ -99,5 +99,6 @@
     @include('components.student-form', ['title' => 'Editar Aluno', ])
     @include('components.new-training-form')
     @include('components.edit-training-form')
+    @include('components.delete-training-form')
 
 @endsection

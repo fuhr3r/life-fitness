@@ -59,5 +59,4 @@
         {!! Form::submit('Cadastrar', ['class' => 'ui button']) !!}
         {!! Form::close() !!}
     </div>
-    </form>
 </div>
