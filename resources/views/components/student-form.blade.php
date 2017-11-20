@@ -4,7 +4,7 @@
         {{$title}}
     </div>
     <div class="content">
-        {!! Form::open(['route' => 'register', 'class' => 'ui form']) !!}
+        {!! Form::open(['route' => 'register', 'class' => 'ui form', 'id' => 'new-user']) !!}
         {{ csrf_field() }}
         <div class="fields">
             <div class="five wide field">
@@ -109,7 +109,7 @@
     </div>
     <div class="actions">
         <div class="ui cancel button">Cancelar</div>
-        {!! Form::submit('Cadastrar', ['class' => 'ui button']) !!}
+        {!! Form::submit('Cadastrar', ['class' => 'ui button', 'form' => 'new-user']) !!}
         {!! Form::close() !!}
     </div>
     </form>

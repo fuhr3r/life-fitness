@@ -1,10 +1,11 @@
-$('#menuButton').click(function (event) {
+showOptionsButtons();
+
+let resim = $("body");
+resim.hammer().on("swiperight", function (ev) {
     $('.ui.sidebar').sidebar('toggle');
 });
 
-let resim = $("body");
-
-resim.hammer().on("swiperight", function (ev) {
+$('#menuButton').click(function (event) {
     $('.ui.sidebar').sidebar('toggle');
 });
 
@@ -32,15 +33,11 @@ $('.new.training.action').click(function () {
 
 $('.ui.accordion').accordion();
 
-showOptionsButtons();
-
 $('.ui.cancel.button').click(function () {
     $('.ui.modal').modal('hide');
 });
 
 $('.ui.dropdown').dropdown();
-
-////////////////////////////////////////
 
 $('.edit.user.action').click(function () {
     $('.ui.student.modal').modal('show');
