@@ -32,17 +32,10 @@ $('.new.training.action').click(function () {
 
 $('.ui.accordion').accordion();
 
-function showOptionsButtons() {
-    $('.options.wrapper').mouseenter(function () {
-        $(this).find(".icon.action").css("opacity", 1)
-    }).mouseleave(function () {
-        $(this).find(".icon.action").css("opacity", 0)
-    });
-}
 showOptionsButtons();
 
 $('.ui.cancel.button').click(function () {
-   $('.ui.modal').modal('hide');
+    $('.ui.modal').modal('hide');
 });
 
 $('.ui.dropdown').dropdown();
@@ -50,20 +43,24 @@ $('.ui.dropdown').dropdown();
 ////////////////////////////////////////
 
 $('.edit.user.action').click(function () {
-   $('.ui.student.modal').modal('show');
+    $('.ui.student.modal').modal('show');
 });
 
 $('.edit.training.action').click(function () {
 
     $('.parts.select').change();
+    let modal = $('.ui.edit.training.modal');
 
-    let repetition = $(this).parent().prevAll('.repetition.value').text();
+    let repetitions = $(this).parent().prevAll('.repetition.value').text();
     let serie = $(this).parent().prevAll('.serie.value').text();
     let weight = $(this).parent().prevAll('.weight.value').text();
     let id = $(this).parent().parent().attr('data-user-exercise');
 
-    $('.ui.edit.training.modal').modal('show').find('input[name=id]').val(id);
-    $('.ui.edit.training.modal').find('input[name=repetition]').val(repetition);
+    modal.modal('show').find('input[name=id]').val(id);
+
+    modal.find('input[name=serie]').val(serie);
+    modal.find('input[name=repetitions]').val(repetitions);
+    modal.find('input[name=weight]').val(weight);
 });
 
 $('.delete.training.action').click(function () {
@@ -96,7 +93,7 @@ $('.body.part.segment').click(function () {
     })
 });
 
-function populateSelect(select){
+function populateSelect(select) {
     let partId = $(select).val();
     console.log(partId);
     let url = '/part/' + partId + '/get-exercises';
@@ -107,4 +104,12 @@ function populateSelect(select){
             $('.exercises.select').append(`<option value="${exercise.id}">${exercise.name}</option>`);
         })
     })
+}
+
+function showOptionsButtons() {
+    $('.options.wrapper').mouseenter(function () {
+        $(this).find(".icon.action").css("opacity", 1)
+    }).mouseleave(function () {
+        $(this).find(".icon.action").css("opacity", 0)
+    });
 }
