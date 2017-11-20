@@ -12,7 +12,6 @@
             @forelse($user_exercises as $day => $exercises)
                 @if($exercises)
                     <div class="ui fluid styled accordion" data-id-exercise="{{--todo: $user_exercise--}}">
-                        <span>{{$exercises}}</span>
                         <div class="active title">
                             <i class="dropdown icon"></i>
                             <span>{{$day}}</span>
@@ -37,7 +36,7 @@
                                             </thead>
                                             <tbody>
                                             @foreach($exercise as $ex)
-                                                <tr class="options wrapper">
+                                                <tr class="options wrapper" data-user-exercise="{{$ex->id}}">
                                                     <td>{{$ex->exercise->name}}
                                                     <td class="serie value">{{$ex->serie}}</td>
                                                     <td class="repetition value">{{$ex->repetitions}}</td>

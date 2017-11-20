@@ -34,4 +34,4 @@ Route::post('/user/{id}/exercise/create', 'UserExerciseController@store')->name(
 //Route::get('/user/{id}/exercise/create', 'UserExerciseController@store')->name('user.exercises');
 Route::get('/part/{id}/get-exercises', 'UserExerciseController@listExercisesByPart');
 
-Route::post('/user/{id}/exercise/{exercise_id}/update', 'UserExerciseController@update');
+Route::post('/user/{id}/exercise/update', 'UserExerciseController@update');

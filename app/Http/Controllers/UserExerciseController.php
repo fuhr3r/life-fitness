@@ -58,8 +58,8 @@ class UserExerciseController extends Controller
 
     }
 
-    public function update(Request $request, $id, $exercise_id){
-        $user = User::find($id);
+    public function update(Request $request, $id){
+        $user = Auth::user();
         $days = Day::pluck('name', 'id');
         $parts = Part::pluck('name', 'id');
 
