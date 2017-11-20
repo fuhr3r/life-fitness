@@ -62,9 +62,13 @@ $('.edit.training.action').click(function () {
     let weight = $(this).parent().prevAll('.weight.value').text();
     let id = $(this).parent().parent().attr('data-user-exercise');
 
-    $('.ui.edit.training.modal').find('input[name=id]').val(id);
+    $('.ui.edit.training.modal').modal('show').find('input[name=id]').val(id);
+    $('.ui.edit.training.modal').find('input[name=repetition]').val(repetition);
+});
 
-    $('.ui.edit.training.modal').modal('show');
+$('.delete.training.action').click(function () {
+    let id = $(this).parent().parent().attr('data-user-exercise');
+    $('.ui.remove.training.modal').modal('show').find('input[name=id]').val(id);
 });
 
 $('.parts.select').on('change', function () {
@@ -87,7 +91,6 @@ $('.body.part.segment').click(function () {
                         <i class="edit training icon action"></i>
                     </div>
                  </div>`);
-
             showOptionsButtons();
         })
     })
