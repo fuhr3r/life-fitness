@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('login');
 });
 
-Route::get('/admin', 'UserExerciseController@listUsers');
+Route::get('/admin', 'UserExerciseController@listUsers')->name('admin');
 
 Route::get('/aluno/{id}', 'UserExerciseController@listExercises')->name('aluno');
 
@@ -36,3 +36,4 @@ Route::get('/part/{id}/get-exercises', 'UserExerciseController@listExercisesByPa
 
 Route::post('/user/{id}/exercise/update', 'UserExerciseController@update');
 Route::post('/user/{id}/exercise/destroy', 'UserExerciseController@destroy');
+Route::post('/user-register', 'Auth\RegisterController@register')->name('user-register');

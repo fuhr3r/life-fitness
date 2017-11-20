@@ -4,7 +4,7 @@
         {{$title}}
     </div>
     <div class="content">
-        {!! Form::open(['route' => 'register', 'class' => 'ui form', 'id' => 'new-user']) !!}
+        {!! Form::open(['route' => 'user-register', 'class' => 'ui form', 'id' => 'new-user']) !!}
         {{ csrf_field() }}
         <div class="fields">
             <div class="five wide field">
@@ -24,7 +24,7 @@
 
             <div class="three wide field">
                 {!! Form::label('gender', 'Sexo') !!}
-                {!! Form::select('gender', ["h"=>"Masculino", "f"=>"Feminino"]) !!}
+                {!! Form::select('gender', ["m"=>"Masculino", "f"=>"Feminino"]) !!}
             </div>
 
             <div class="three wide field">
@@ -86,7 +86,7 @@
 
             <div class="two wide field">
                 <label for="">Senha</label>
-                <input type="text">
+                <input type="text" name="password">
             </div>
         </div>
 
