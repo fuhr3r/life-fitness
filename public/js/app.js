@@ -54,12 +54,16 @@ $('.edit.user.action').click(function () {
 });
 
 $('.edit.training.action').click(function () {
+
     $('.parts.select').change();
     let repetition = $(this).parent().prevAll('.repetition.value').text();
     let serie = $(this).parent().prevAll('.serie.value').text();
     let weight = $(this).parent().prevAll('.weight.value').text();
+    let id = $(this).parent().parent().attr('data-user-exercise');
 
-    $('.ui.training.modal').modal('show');
+    $('.ui.edit.training.modal').find('input[name=id]').val(id);
+
+    $('.ui.edit.training.modal').modal('show');
 });
 
 $('.parts.select').on('change', function () {

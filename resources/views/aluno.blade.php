@@ -41,8 +41,10 @@
                                                     <td class="serie value">{{$ex->serie}}</td>
                                                     <td class="repetition value">{{$ex->repetitions}}</td>
                                                     <td class="weight value">{{$ex->weight}}</td>
-                                                    <td class="container options cell"><i class="trash outline icon action"></i><i
-                                                                class="edit training icon action"></i></td>
+                                                    <td class="container options cell">
+                                                        <i class="trash outline icon action"></i>
+                                                        <i class="edit training icon action"></i>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                             </tbody>

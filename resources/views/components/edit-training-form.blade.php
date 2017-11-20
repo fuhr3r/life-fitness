@@ -1,11 +1,12 @@
-<div class="ui training modal">
+<div class="ui edit training modal">
     <i class="close icon"></i>
     <div class="header">
         Editar Treino
     </div>
     <div class="content">
-{{--        {!! Form::open(['action' => ['UserExerciseController@update', $user->id], 'class' => 'ui form'] ) !!}--}}
+        {!! Form::open(['action' => ['UserExerciseController@update', $user->id], 'class' => 'ui form'] ) !!}
         {{ csrf_field() }}
+        <input type="hidden" name="id" value="">
         <div class="fields">
             <div class="four wide field">
                 {!! Form::label('parts', 'Selecione a parte do corpo')!!}
