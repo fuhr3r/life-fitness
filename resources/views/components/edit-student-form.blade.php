@@ -52,22 +52,22 @@
 
             <div class="two wide field">
                 {!! Form::label('home_number', 'Número') !!}
-                {!! Form::text('home_number', $user->home_number) !!}
+                {!! Form::text('home_number', $user->address->home_number) !!}
             </div>
 
             <div class="three wide field">
                 {!! Form::label('neighborhood', 'Bairro') !!}
-                {!! Form::text('neighborhood', $user->neighborhood) !!}
+                {!! Form::text('neighborhood', $user->address->neighborhood) !!}
             </div>
 
             <div class="three wide field">
                 {!! Form::label('city', 'Cidade') !!}
-                {!! Form::text('city', $user->city) !!}
+                {!! Form::text('city', $user->address->city) !!}
             </div>
 
             <div class="two wide field"> {{--TODO: create a field for state in Address model--}}
                 {!! Form::label('state', 'Estado') !!}
-                {!! Form::text('state', $user->state) !!}
+                {!! Form::text('state', $user->address->state) !!}
             </div>
 
         </div>

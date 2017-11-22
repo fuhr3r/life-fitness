@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Address;
+use App\Part;
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class RegisterController extends Controller
 {
@@ -21,7 +24,6 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -37,7 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        //$this->middleware('guest');
     }
 
     /**
@@ -61,8 +63,11 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $data)
     {
+        $users = User::all();
+        $parts = Part::pluck('name', 'id');
+
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -76,7 +81,7 @@ class RegisterController extends Controller
             'type' => 'aluno',
         ]);
 
-        $address = new Address([
+        $address = Address::create([
             'street' => $data['street'],
             'city' => $data['city'],
             'neighborhood' => $data['neighborhood'],
@@ -84,10 +89,9 @@ class RegisterController extends Controller
             'state' => $data['state'],
         ]);
 
-
         $user->address()->associate($address);
         $user->save();
 
-        return $user;
+        return redirect()->route('admin', ['users' => $users, 'parts' => $parts]);
     }
 }

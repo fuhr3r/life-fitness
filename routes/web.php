@@ -36,4 +36,4 @@ Route::get('/part/{id}/get-exercises', 'UserExerciseController@listExercisesByPa
 
 Route::post('/user/{id}/exercise/update', 'UserExerciseController@update');
 Route::post('/user/{id}/exercise/destroy', 'UserExerciseController@destroy');
-Route::post('/user-register', 'Auth\RegisterController@register')->name('user-register');
+Route::post('/user-register', 'Auth\RegisterController@create')->name('user-register');

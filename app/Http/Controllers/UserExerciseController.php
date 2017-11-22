@@ -32,7 +32,6 @@ class UserExerciseController extends Controller
 
         return redirect()->route('aluno', ['id'=>$user->id])->with(['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
     }
-
     public function listUsers(){
         $users = User::all();
         $parts = Part::pluck('name', 'id');
@@ -76,7 +75,6 @@ class UserExerciseController extends Controller
 
         return view('aluno',
             ['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
-
 
     }
 
