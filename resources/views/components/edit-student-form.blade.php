@@ -4,7 +4,7 @@
        Editar Aluno
     </div>
     <div class="content">
-        {!! Form::open(['route' => 'user-register', 'class' => 'ui form', 'id' => 'new-user']) !!}
+        {!! Form::open(['route' => 'user-update', 'class' => 'ui form', 'id' => 'new-user']) !!}
         {{ csrf_field() }}
         <div class="fields">
             <div class="five wide field">
@@ -108,7 +108,7 @@
     </div>
     <div class="actions">
         <div class="ui cancel button">Cancelar</div>
-        {!! Form::submit('Cadastrar', ['class' => 'ui button', 'form' => 'new-user']) !!}
+        {!! Form::submit('Editar', ['class' => 'ui button', 'form' => 'new-user']) !!}
         {!! Form::close() !!}
     </div>
     </form>

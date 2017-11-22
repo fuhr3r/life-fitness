@@ -1,4 +1,4 @@
-<div class="ui large student modal">
+<div class="ui large new student modal">
     <i class="close icon"></i>
     <div class="header">
         Adicionar Aluno

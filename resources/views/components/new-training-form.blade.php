@@ -1,4 +1,4 @@
-<div class="ui training modal">
+<div class="ui new training modal">
     <i class="close icon"></i>
     <div class="header">
         Adicionar Treino

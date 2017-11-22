@@ -28,7 +28,7 @@ $('.new.exercise.action').click(function () {
 });
 
 $('.new.training.action').click(function () {
-    $('.ui.training.modal:not(.edit)').modal('show');
+    $('.ui.new.training.modal').modal('show');
 });
 
 $('.ui.accordion').accordion();
@@ -45,7 +45,9 @@ $('.edit.user.action').click(function () {
 
 $('.edit.training.action').click(function () {
 
-    $('.parts.select').change();
+    $('.parts.select').change(function () {
+        populateSelect(this)
+    });
     let modal = $('.ui.edit.training.modal');
 
     let repetitions = $(this).parent().prevAll('.repetition.value').text();
@@ -65,7 +67,7 @@ $('.delete.training.action').click(function () {
     $('.ui.remove.training.modal').modal('show').find('input[name=id]').val(id);
 });
 
-$('.parts.select').on('change', function () {
+$('.parts.select').change(function () {
     populateSelect(this)
 });
 
