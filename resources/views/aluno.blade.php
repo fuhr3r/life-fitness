@@ -19,7 +19,7 @@
                         <div class="content">
                             <div class="accordion">
                                 @foreach($exercises as $part => $exercise)
-                                    <div class="title">
+                                    <div class="part title">
                                         <i class="dropdown icon"></i>
                                         {{$part}}
                                     </div>

@@ -28,6 +28,7 @@ $('.new.exercise.action').click(function () {
 });
 
 $('.new.training.action').click(function () {
+    $('.parts.select').change();
     $('.ui.new.training.modal').modal('show');
 });
 
@@ -45,10 +46,21 @@ $('.edit.user.action').click(function () {
 
 $('.edit.training.action').click(function () {
 
-    $('.parts.select').change(function () {
-        populateSelect(this)
-    });
+    let partName =  $('.part.title.active').text().trim();
     let modal = $('.ui.edit.training.modal');
+    let form = modal.find('form').eq(0);
+    let value;
+    form.find(".parts.select option").each(function () {
+        if($(this).text() == partName){
+            value = $(this).attr('value');
+        }
+    });
+
+    form.find('.parts.select').val(value);
+
+    $('.parts.select').change();
+
+
 
     let repetitions = $(this).parent().prevAll('.repetition.value').text();
     let serie = $(this).parent().prevAll('.serie.value').text();
@@ -67,6 +79,22 @@ $('.delete.training.action').click(function () {
     $('.ui.remove.training.modal').modal('show').find('input[name=id]').val(id);
 });
 
+$('.edit.exercise.action').click(function () {
+   $('.ui.exercise.modal').modal('show');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
 $('.parts.select').change(function () {
     populateSelect(this)
 });
@@ -78,7 +106,7 @@ $('.body.part.segment').click(function () {
     let url = '/part/' + partId + '/get-exercises';
     $('.ui.training.segments').empty();
     $.get(url, function (data) {
-        console.log(data);
+        // console.log(data);
         $.each(data, function (index, exercise) {
             $('.ui.training.segments').append(`
                 <div class="ui options wrapper training segment">${exercise.name}
@@ -94,11 +122,11 @@ $('.body.part.segment').click(function () {
 
 function populateSelect(select) {
     let partId = $(select).val();
-    console.log(partId);
+    // console.log(partId);
     let url = '/part/' + partId + '/get-exercises';
     $('.exercises.select').empty();
     $.get(url, function (data) {
-        console.log(data);
+        // console.log(data);
         $.each(data, function (index, exercise) {
             $('.exercises.select').append(`<option value="${exercise.id}">${exercise.name}</option>`);
         })
