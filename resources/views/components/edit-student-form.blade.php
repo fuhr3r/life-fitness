@@ -4,7 +4,7 @@
        Editar Aluno
     </div>
     <div class="content">
-        {!! Form::open(['route' => 'user-update', 'class' => 'ui form', 'id' => 'new-user']) !!}
+        {!! Form::open(['route' => ['user-update', $user->id], 'class' => 'ui form', 'id' => 'new-user']) !!}
         {{ csrf_field() }}
         <div class="fields">
             <div class="five wide field">

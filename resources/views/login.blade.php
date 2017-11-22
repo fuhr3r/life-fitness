@@ -18,12 +18,13 @@
         <img src="{{ URL::asset('images/icons/peitoral.svg') }}" alt="Logo" class="image">
         <div class="content">Life-Fitness</div>
       </h2>
-      <form class="ui large form" action="" method="post">
+      <form class="ui large form" action="/login" method="post">
+        {{csrf_field()}}
         <div class="ui stacked segment">
           <div class="field">
             <div class="ui left icon input">
               <i class="user icon"></i>
-              <input type="text" name="username" value="">
+              <input type="text" name="login" value="">
             </div>
           </div>
           <div class="field">
@@ -32,7 +33,7 @@
               <input type="password" name="password" value="">
             </div>
           </div>
-          <div class="ui large black submit button">Entrar</div>
+          <input type="submit" class="ui large black submit button" value="Entrar">
         </div>
       </form>
     </div>

@@ -94,4 +94,14 @@ class RegisterController extends Controller
 
         return redirect()->route('admin', ['users' => $users, 'parts' => $parts]);
     }
+
+    protected function update(Request $data, $id){
+        $user = User::find($id);
+        $user->fill($data->all());
+        $user->address->fill($data->all());
+        $user->address->save();
+        $user->save();
+
+        return redirect()->back();
+    }
 }
