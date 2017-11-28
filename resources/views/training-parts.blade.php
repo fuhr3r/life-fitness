@@ -5,17 +5,11 @@
     <div class="ui body training container" id="first">
         <div class="ui part segments">
             @forelse($parts as $part)
-                <div class="ui options wrapper body part segment ">
-                    <span data-id="{{$part->id}}">{{$part->name}}</span>
-                    {{--<a href="/part/{{$part->id}}">show</a>--}}
-                    {{--<a href="/part/{{$part->id}}/edit"></a>--}}
-{{--                    {{ Form::open(['method' => 'DELETE', 'route' => ['part.destroy', $part->id] ]) }}--}}
-{{--                    {{ Form::hidden('id', $part->id) }}--}}
-                    {{--{{ Form::submit('Delete') }}--}}
-                    {{--{{ Form::close() }}--}}
+                <div data-part-id="{{$part->id}}" class="ui options wrapper body part segment">
+                    <span>{{$part->name}}</span>
                     <div class="container options">
-                        <i class="delete trash exercise outline icon action"></i>
-                        <i class="edit exercise icon action"></i>
+                        <i class="delete trash part outline icon action"></i>
+                        <i class="edit part icon action"></i>
                     </div>
 
                 </div>
@@ -29,5 +23,8 @@
     </div>
 
     @include('components.edit-exercise-form')
+    @include('components.delete-exercise-form')
+    @include('components.edit-part-form')
+    @include('components.delete-part-form')
 
 @endsection

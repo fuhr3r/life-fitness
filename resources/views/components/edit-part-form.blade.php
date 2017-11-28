@@ -1,11 +1,11 @@
-<div class="ui edit exercise modal">
+<div class="ui edit part modal">
     <i class="close icon"></i>
     <div class="header">
-        Editar treino
+        Editar Parte do Corpo
     </div>
     <div class="content">
         {{ Form::open(['method' => 'PUT', 'route' => ['exercise.update', null], 'class' => 'ui form' ]) }}
-{{--        {!! Form::open(['action' => ['UserExerciseController@destroy', $user->id], 'class' => 'ui form'] ) !!}--}}
+        {{--        {!! Form::open(['action' => ['UserExerciseController@destroy', $user->id], 'class' => 'ui form'] ) !!}--}}
         {{ csrf_field() }}
         <input type="hidden" name="id" value="">
         <div class="fields">

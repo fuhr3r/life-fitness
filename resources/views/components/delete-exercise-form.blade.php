@@ -1,10 +1,10 @@
-<div class="ui delete training modal">
+<div class="ui delete exercise modal">
     <i class="close icon"></i>
     <div class="header">
-        Remover Treino
+        Remover Exercicio
     </div>
     <div class="content">
-        {!! Form::open(['action' => ['UserExerciseController@destroy', $user->id], 'class' => 'ui form'] ) !!}
+        {!! Form::open(['action' => ['UserExerciseController@destroy', null], 'class' => 'ui form'] ) !!}
         {{ csrf_field() }}
         <input type="hidden" name="id" value="">
         <div class="fields">
