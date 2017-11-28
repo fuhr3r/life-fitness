@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,7 +55,14 @@ class LoginController extends Controller
             $login_type => $request->input('login')
         ]);
 
+        $user = User::where($login_type, $request->input('login'))->first();
+
         if (Auth::attempt($request->only($login_type, 'password'))) {
+            if (Auth::user()->type == 'admin')
+                $this->redirectTo = '/admin';
+            else
+                return redirect()->route('user', ['id' => $user->id]);
+
             return redirect()->intended($this->redirectTo);
         }
 

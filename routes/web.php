@@ -19,6 +19,8 @@ Route::get('/admin', 'UserExerciseController@listUsers')->name('admin');
 
 Route::get('/aluno/{id}', 'UserExerciseController@listExercises')->name('aluno');
 
+Route::get('/usuario/{id}', 'UserExerciseController@showUser')->name('user');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

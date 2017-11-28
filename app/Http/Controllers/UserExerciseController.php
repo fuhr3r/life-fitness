@@ -14,7 +14,7 @@ class UserExerciseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, $id)
@@ -30,16 +30,19 @@ class UserExerciseController extends Controller
         $days = Day::pluck('name', 'id');
 
 
-        return redirect()->route('aluno', ['id'=>$user->id])->with(['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
+        return redirect()->route('aluno', ['id' => $user->id])->with(['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
     }
-    public function listUsers(){
+
+    public function listUsers()
+    {
         $users = User::all();
         $parts = Part::pluck('name', 'id');
 
         return view('adm', ['users' => $users, 'parts' => $parts]);
     }
 
-    public function listExercises($id){
+    public function listExercises($id)
+    {
         $user = User::find($id);
         $days = Day::pluck('name', 'id');
         $parts = Part::pluck('name', 'id');
@@ -50,13 +53,15 @@ class UserExerciseController extends Controller
             ['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
     }
 
-    public function listExercisesByPart($id){
+    public function listExercisesByPart($id)
+    {
         $exercises = Exercise::where('part_id', $id)->get();
         return $exercises;
 
     }
 
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
 
         $user = User::find($id);
         $days = Day::pluck('name', 'id');
@@ -78,7 +83,8 @@ class UserExerciseController extends Controller
 
     }
 
-    public function destroy(Request $request, $id){
+    public function destroy(Request $request, $id)
+    {
         User_Exercise::destroy($request->id);
 
         $user = User::find($id);
@@ -86,19 +92,26 @@ class UserExerciseController extends Controller
         $parts = Part::pluck('name', 'id');
         $user_exercises = $this->getUserExercises($user->id);
 
-        return redirect()->route('aluno', ['id'=>$user->id])->with(['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
+        return redirect()->route('aluno', ['id' => $user->id])->with(['user' => $user, 'user_exercises' => $user_exercises, 'parts' => $parts, 'days' => $days]);
     }
 
-    private function getUserExercises($user_id){
+    public function showUser($id)
+    {
+        $user = User::find($id);
+        return view('index');
+    }
+
+    private function getUserExercises($user_id)
+    {
         $days = Day::pluck('name', 'id');
         $parts = Part::pluck('name', 'id');
 
         $user_exercises = [];
         $exercise_parts = [];
 
-        foreach ($days as $day_id => $day){
-            foreach ($parts as $part_id => $part){
-                $exercise = User_Exercise::with('exercise')->whereHas('exercise', function ($query) use ($part_id){
+        foreach ($days as $day_id => $day) {
+            foreach ($parts as $part_id => $part) {
+                $exercise = User_Exercise::with('exercise')->whereHas('exercise', function ($query) use ($part_id) {
                     $query->where('part_id', '=', $part_id);
                 })->where('day_id', '=', $day_id)->where('user_id', '=', $user_id)
                     ->get();
