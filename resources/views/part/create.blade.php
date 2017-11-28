@@ -7,3 +7,4 @@
     {!! Form::submit('Cadastrar') !!}
 
     {!! Form::close() !!}
+\\\

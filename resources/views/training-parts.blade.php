@@ -14,7 +14,7 @@
                     {{--{{ Form::submit('Delete') }}--}}
                     {{--{{ Form::close() }}--}}
                     <div class="container options">
-                        <i class="trash exercise outline icon action"></i>
+                        <i class="delete trash exercise outline icon action"></i>
                         <i class="edit exercise icon action"></i>
                     </div>
 

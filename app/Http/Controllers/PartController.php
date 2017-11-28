@@ -15,7 +15,7 @@ class PartController extends Controller
     public function index()
     {
         $parts = Part::all();
-        return view('part.index', ['parts' => $parts]);
+        return view('training-parts', ['parts' => $parts]);
     }
 
     /**
