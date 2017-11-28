@@ -14,8 +14,8 @@ class AddExerciseRefToUserExercise extends Migration
     public function up()
     {
         Schema::table('user_exercise', function(Blueprint $table){
-            $table->integer('exercise_id')->unsigned();
-            $table->foreign('exercise_id')->references('id')->on('exercises');
+            $table->integer('exercise_id')->unsigned()->nullable();;
+            $table->foreign('exercise_id')->references('id')->on('exercises')->onDelete('set null');
         });
     }
 
