@@ -48,12 +48,12 @@ $('.edit.user.action').click(function () {
 
 $('.edit.training.action').click(function () {
 
-    let partName =  $('.part.title.active').text().trim();
+    let partName = $('.part.title.active').text().trim();
     let modal = $('.ui.edit.training.modal');
     let form = modal.find('form').eq(0);
     let value;
     form.find(".parts.select option").each(function () {
-        if($(this).text() == partName){
+        if ($(this).text() == partName) {
             value = $(this).attr('value');
         }
     });
@@ -61,7 +61,6 @@ $('.edit.training.action').click(function () {
     form.find('.parts.select').val(value);
 
     $('.parts.select').change();
-
 
 
     let repetitions = $(this).parent().prevAll('.repetition.value').text();
@@ -82,23 +81,26 @@ $('.delete.training.action').click(function () {
 });
 
 $('.edit.part.action').click(function () {
-   $('.ui.edit.part.modal').modal('show');
+    let value = $(this).parent().prev().text();
+    $('.ui.edit.part.modal input[name=name]').val(value);
+    $('.ui.edit.part.modal').modal('show');
 });
 
 $('.delete.part.action').click(function () {
-    $('.ui.delete.part.modal').modal('show');
     partId = $(this).parents().eq(1).attr('data-part-id');
+    $('.ui.delete.part.modal').modal('show');
 });
 
 $('.ui.part.form').submit(function (e) {
     let action = $(this).attr('action');
-    console.log(action+partId);
-   $(this).attr('action', action + '/' +partId);
-    // e.preventDefault()
+    console.log(action + partId);
+    $(this).attr('action', action + '/' + partId);
 });
 
-
-
+$('.edit.exercise.action').click(function () { //todo: bind buttons after append
+    alert(1)
+   $('.ui.exercise.modal').modal('show')
+});
 
 $('.parts.select').change(function () {
     populateSelect(this)
