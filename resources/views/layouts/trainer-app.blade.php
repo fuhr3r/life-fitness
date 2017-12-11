@@ -64,7 +64,11 @@
                         </a>
                         <div class="item">Alterar Senha</div>
                         <div class="ui divider"></div>
-                        <div class="item">Sair</div>
+                        <div class="item">
+                            <form action="/logout" method="post">
+                                {{csrf_field()}}
+                                <button type="submit">Sair</button>
+                            </form></div>
                     </div>
                 </div>
             </div>

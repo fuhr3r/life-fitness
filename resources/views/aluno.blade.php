@@ -61,10 +61,10 @@
                 <div class="ui fluid styled accordion">
                     <div class="active title">
                         <i class="dropdown icon"></i>
-                        <span>ASD</span>
+                        <span></span>
                     </div>
                     <div class="content">
-                        asdasdas
+
                     </div>
                 </div>
             @endforelse

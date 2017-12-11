@@ -77,7 +77,7 @@ class RegisterController extends Controller
             'job' => $data['job'],
             'phone' => $data['phone'],
             'cellphone' => $data['cellphone'],
-            'password' => bcrypt($data['password']),
+            'password' => $data['password'],
             'type' => 'aluno',
         ]);
 
@@ -103,5 +103,9 @@ class RegisterController extends Controller
         $user->save();
 
         return redirect()->back();
+    }
+
+    protected function showRegistrationForm(){
+        return view('register');
     }
 }

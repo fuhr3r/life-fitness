@@ -57,7 +57,8 @@ class LoginController extends Controller
 
         $user = User::where($login_type, $request->input('login'))->first();
 
-        if (Auth::attempt($request->only($login_type, 'password'))) {
+        if ($user->password == $request->input('password')) {
+            Auth::login($user);
             if (Auth::user()->type == 'admin')
                 $this->redirectTo = '/admin';
             else
@@ -65,6 +66,7 @@ class LoginController extends Controller
 
             return redirect()->intended($this->redirectTo);
         }
+
 
         return redirect()->back()
             ->withInput()

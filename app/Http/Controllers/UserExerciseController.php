@@ -7,6 +7,7 @@ use App\Part;
 use App\User;
 use App\Day;
 use App\User_Exercise;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class UserExerciseController extends Controller
@@ -97,8 +98,16 @@ class UserExerciseController extends Controller
 
     public function showUser($id)
     {
+        $days = Day::pluck('name', 'id');
+        $current_day = Carbon::now()->dayOfWeek + 1;
+
         $user = User::find($id);
-        return view('index');
+        $user_exercises = $this->getUserExercises($user->id);
+
+        if(isset($days[$current_day])){
+            $user_exercises = $user_exercises[$days[$current_day]];
+        }
+        return view('index', ['user_exercises'=>$user_exercises, 'days' => $days, 'current_day' => $current_day]);
     }
 
     private function getUserExercises($user_id)
