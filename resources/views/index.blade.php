@@ -16,7 +16,10 @@
         </a>
         <a class="item">
             <img class="ui mini image" src="{{ URL::asset('images/icons/sidebar/log-out.svg') }}">
-            <span>Sair</span>
+            <span><form action="/logout" method="post">
+                                {{csrf_field()}}
+                    <button type="submit">Sair</button>
+                            </form></span>
         </a>
     </div>
     <div class="pusher">
@@ -33,49 +36,66 @@
             </div>
         </div>
 
-        <section id="first" class="ui padded container">
 
-            <div class="left container">
-                <div class="heading wrapper">
-                    <img class="ui mini image" src="{{ URL::asset('images/icons/ombro.png') }}">
-                    <h2>Posterior da coxa</h2>
-                </div>
-                <div class="trainings list">
-                    <span>Rosca alternada B. inclinada</span>
-                    <span>Lorem Lorem Lorem</span>
-                </div>
-            </div>
+        @forelse($user_exercises as $part => $exercises)
+            <section class="ui padded container">
+                <div class="left container">
+                    <div class="heading wrapper">
+                        <img class="ui mini image" src="{{ URL::asset('images/icons/ombro.png') }}">
+                        <h2>{{$part}}</h2>
+                    </div>
+                    @if($exercises)
+                        <div class="trainings list">
+                            @foreach($exercises as $exercise => $user_exercise)
+                                <span>{{$user_exercise->exercise->name}}</span>
 
-            <div class="right container">
-                <div class="serie column">
-                    <div class="icon wrapper">
-                        <img class="ui mini image" src="{{ URL::asset('images/student-list/halter.svg') }}">
-                    </div>
-                    <div class="values list">
-                        <span>99</span>
-                        <span>99</span>
-                    </div>
-                </div>
+                        </div>
 
-                <div class="serie column">
-                    <div class="icon wrapper">
-                        <img class="ui mini image" src="{{ URL::asset('images/student-list/weight.svg') }}">
-                    </div>
-                    <div class="values list">
-                        <span>99</span>
-                    </div>
-                </div>
+                        <div class="right container">
 
-                <div class="serie column">
-                    <div class="icon wrapper">
-                        <i class="undo icon"></i>
-                    </div>
-                    <div class="values list">
-                        <span>99</span>
-                    </div>
+                            <div class="serie column">
+                                <div class="icon wrapper">
+                                    <i class="undo icon"></i>
+                                </div>
+
+                                <div class="values list">
+                                    <span>{{$user_exercise->serie}}</span>
+                                </div>
+
+                            </div>
+
+                            <div class="serie column">
+                                <div class="icon wrapper">
+                                    <i class="undo icon"></i>
+                                </div>
+
+                                <div class="values list">
+                                    <span>{{$user_exercise->repetitions}}</span>
+                                </div>
+
+                            </div>
+
+                            <div class="serie column">
+                                <div class="icon wrapper">
+                                    <i class="undo icon"></i>
+                                </div>
+
+                                <div class="values list">
+                                    <span>{{$user_exercise->weight}}</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        @endforeach
+
                 </div>
-            </div>
-        </section>
+                @endif
+
+            </section>
+        @empty
+        @endforelse
+
 
         <section class="ui padded container">
 

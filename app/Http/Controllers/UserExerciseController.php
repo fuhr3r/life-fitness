@@ -107,6 +107,7 @@ class UserExerciseController extends Controller
         if(isset($days[$current_day])){
             $user_exercises = $user_exercises[$days[$current_day]];
         }
+
         return view('index', ['user_exercises'=>$user_exercises, 'days' => $days, 'current_day' => $current_day]);
     }
 
