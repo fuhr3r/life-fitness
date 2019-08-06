@@ -11,6 +11,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+
+        $days = [
+            'domingo'=> 0,
+            'segunda'=> 1,
+            'terça'=> 2,
+            'quarta'=> 3,
+            'quinta'=> 4,
+            'sexta'=> 5,
+            'sábado'=> 6,
+        ];
+
+        foreach ($days as $day => $value){
+            DB::table('days')->insert([
+                'name' => $day,
+                'order' => $value,
+            ]);
+        }
     }
 }

@@ -1,3 +1,6 @@
+body {
+  height: initial !important; }
+
 .ui.sidebar.inverted.vertical.menu .item {
   font-size: 2em;
   display: flex;
@@ -11,5 +14,80 @@
   font-size: 2.2em;
   color: white; }
 
+.ui.fixed.inverted.menu .ui.container .ui.item img {
+  height: 30px;
+  width: auto; }
+
+.pointing.dropdown .menu .item {
+  color: black; }
+
 #first {
   margin-top: 6em; }
+
+.ui.tab.segment {
+  max-height: 400px;
+  overflow-y: auto; }
+
+.container.options {
+  display: flex;
+  justify-content: space-around; }
+  .container.options * {
+    opacity: 0;
+    transition: opacity 0.2s; }
+    .container.options *:hover {
+      opacity: 1; }
+
+.wrapper:not(.options) {
+  display: flex; }
+  .wrapper:not(.options) .timeline.container {
+    width: 30%; }
+
+.ui.body.training.container {
+  display: flex; }
+  .ui.body.training.container .ui.segments {
+    margin: 0;
+    width: 70%; }
+    .ui.body.training.container .ui.segments:first-child {
+      width: 25%; }
+    .ui.body.training.container .ui.segments .body.part.segment, .ui.body.training.container .ui.segments .training.segment {
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer; }
+    .ui.body.training.container .ui.segments .body.part.segment .container.options {
+      width: 115px;
+      margin-left: 1em; }
+    .ui.body.training.container .ui.segments .training.segment .container.options {
+      width: 115px;
+      margin: 0 13em 0 0; }
+
+.ui.form input[type=text]:disabled {
+  background: #e8e8e8; }
+
+.item .disabled.action {
+  pointer-events: none;
+  visibility: hidden; }
+
+.action {
+  cursor: pointer; }
+
+.content p {
+  margin-left: 1em; }
+  .content p a {
+    color: black; }
+
+.fields .ui.basic.button {
+  height: 38px;
+  align-self: flex-end;
+  width: 120px; }
+
+.is-selected {
+  font-weight: bold; }
+
+.top.right.pointing.dropdown .menu.left {
+  flex-direction: column; }
+
+.ui.fixed.inverted.bottom.menu {
+  top: initial;
+  left: 0;
+  right: initial;
+  bottom: 0; }

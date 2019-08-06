@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Address;
+use App\Part;
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+
 
 class RegisterController extends Controller
 {
@@ -20,14 +24,13 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -36,7 +39,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        //$this->middleware('guest');
     }
 
     /**
@@ -50,8 +53,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-            'type' => 'required'
+            'password' => 'required|string|min:6'
         ]);
     }
 
@@ -61,15 +63,49 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-    protected function create(array $data)
+    protected function create(Request $data)
     {
-        return User::create([
+        $users = User::all();
+        $parts = Part::pluck('name', 'id');
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'cpf' => $data['cpf'],
+            'gender' => $data['gender'],
+            'birth_date' => $data['birth_date'],
+            'job' => $data['job'],
             'phone' => $data['phone'],
-            'type' => $data['type'],
-            'password' => bcrypt($data['password']),
+            'cellphone' => $data['cellphone'],
+            'password' => $data['password'],
+            'type' => 'aluno',
         ]);
+
+        $address = Address::create([
+            'street' => $data['street'],
+            'city' => $data['city'],
+            'neighborhood' => $data['neighborhood'],
+            'home_number' => $data['home_number'],
+            'state' => $data['state'],
+        ]);
+
+        $user->address()->associate($address);
+        $user->save();
+
+        return redirect()->route('admin', ['users' => $users, 'parts' => $parts]);
+    }
+
+    protected function update(Request $data, $id){
+        $user = User::find($id);
+        $user->fill($data->all());
+        $user->address->fill($data->all());
+        $user->address->save();
+        $user->save();
+
+        return redirect()->back();
+    }
+
+    protected function showRegistrationForm(){
+        return view('register');
     }
 }
